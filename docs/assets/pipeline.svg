@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="656" viewBox="0 0 800 656" role="img" aria-labelledby="title desc">
+  <title id="title">Akasha · 从论文到可追溯的结论</title>
+  <desc id="desc">自上而下四个阶段。导入与提取：PDF 指纹去重、页面检查与文本提取。结构与证据：章节重建、证据索引。分析与核查：深度和预算分配、多 agent 分析、元数据补全、结论核查。综合与检索：综合整理、关系连接、搜索索引。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M1 1l3 2.5L1 6" fill="none" stroke="#789184" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      text { font-family: 'Noto Sans CJK SC', 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+      .heading { font-size: 21px; font-weight: 600; fill: #293f35; }
+      .detail { font-size: 17px; fill: #455d50; }
+      .small { font-size: 14px; fill: #60766a; }
+      .number { font-family: Georgia, serif; font-size: 24px; fill: #668272; }
+      .line { fill: none; stroke: #789184; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <rect width="800" height="656" rx="24" fill="#f4f7f2"/>
+  <text x="40" y="43" class="small" letter-spacing="3">AKASHA / WORKFLOW</text>
+  <text x="40" y="79" font-size="25" font-weight="600" fill="#293f35">从论文，到可追溯的结论。</text>
+  <path d="M40 99H760" stroke="#d8e3d8"/>
+
+  <!-- A vertical rhythm keeps the reading order unambiguous. -->
+  <g class="line" marker-end="url(#arrow)">
+    <path d="M75 206V236"/>
+    <path d="M75 332V362"/>
+    <path d="M75 458V488"/>
+  </g>
+
+  <rect x="40" y="116" width="720" height="90" rx="16" fill="#ffffff" stroke="#dbe5da"/>
+  <circle cx="75" cy="161" r="22" fill="#edf3e9"/>
+  <text x="75" y="169" text-anchor="middle" class="number">1</text>
+  <text x="115" y="153" class="heading">导入与提取</text>
+  <text x="115" y="179" class="small">先读到内容</text>
+  <path d="M310 136V186" stroke="#e1e9df"/>
+  <text x="338" y="153" class="detail">PDF 导入 · 指纹去重</text>
+  <text x="338" y="180" class="detail">页面检查 · 原生文本 / OCR</text>
+  <g transform="translate(700 144)" class="line">
+    <path d="M0 0h16l8 8v27H0zM16 0v8h8M6 17h12M6 24h9"/>
+  </g>
+
+  <rect x="40" y="242" width="720" height="90" rx="16" fill="#ffffff" stroke="#dbe5da"/>
+  <circle cx="75" cy="287" r="22" fill="#edf3e9"/>
+  <text x="75" y="295" text-anchor="middle" class="number">2</text>
+  <text x="115" y="279" class="heading">结构与证据</text>
+  <text x="115" y="305" class="small">让每段内容有出处</text>
+  <path d="M310 262V312" stroke="#e1e9df"/>
+  <text x="338" y="279" class="detail">章节重建 · 段落组织</text>
+  <text x="338" y="306" class="detail">证据索引 · 原文定位</text>
+  <g transform="translate(699 273)" class="line">
+    <rect width="27" height="7" rx="2"/><path d="M5 7v18h7M5 15h7"/>
+    <rect x="12" y="12" width="15" height="6" rx="2"/><rect x="12" y="22" width="15" height="6" rx="2"/>
+  </g>
+
+  <rect x="40" y="368" width="720" height="90" rx="16" fill="#e9f1e5" stroke="#cbdcc8"/>
+  <circle cx="75" cy="413" r="22" fill="#dbe8d5"/>
+  <text x="75" y="421" text-anchor="middle" class="number">3</text>
+  <text x="115" y="405" class="heading">分析与核查</text>
+  <text x="115" y="431" class="small">围绕证据理解论文</text>
+  <path d="M310 388V438" stroke="#cbdcc8"/>
+  <text x="338" y="405" class="detail">深度与预算 → 多 agent 分析</text>
+  <text x="338" y="432" class="detail">元数据补全 → 结论核查</text>
+  <g transform="translate(698 398)" class="line">
+    <circle cx="12" cy="12" r="12"/><path d="M21 21l9 9M6 12l4 4 8-9"/>
+  </g>
+
+  <rect x="40" y="494" width="720" height="90" rx="16" fill="#ffffff" stroke="#dbe5da"/>
+  <circle cx="75" cy="539" r="22" fill="#edf3e9"/>
+  <text x="75" y="547" text-anchor="middle" class="number">4</text>
+  <text x="115" y="531" class="heading">综合与检索</text>
+  <text x="115" y="557" class="small">留给下一次阅读</text>
+  <path d="M310 514V564" stroke="#e1e9df"/>
+  <text x="338" y="531" class="detail">综合整理 · 关系连接</text>
+  <text x="338" y="558" class="detail">搜索索引 · 跨论文查询</text>
+  <g transform="translate(696 525)" class="line">
+    <path d="M7 7l18 5M7 7l6 21M25 12L13 28"/>
+    <circle cx="7" cy="7" r="4" fill="#fff"/><circle cx="25" cy="12" r="4" fill="#fff"/><circle cx="13" cy="28" r="4" fill="#fff"/>
+  </g>
+  <circle cx="46" cy="619" r="3" fill="#86a17c"/>
+  <text x="59" y="624" class="small">结论保留出处，阅读回到原文。</text>
+</svg>
