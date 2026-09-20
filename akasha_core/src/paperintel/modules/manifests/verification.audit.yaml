@@ -1,0 +1,29 @@
+module_id: "verification.audit"
+version: "1.0.0"
+
+inputs:
+  - "ClaimId"
+  - "PaperVersionId"
+
+outputs:
+  - "AuditBundle"
+
+dependencies:
+  - "knowledge.claims"
+  - "verification.engine"
+  - "agents.framework"
+
+healthcheck:
+  type: "internal"
+  name: "audit_bundle_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "provenance_chain_complete"
+  - "broken_chain_visible"
+  - "model_call_and_prompt_versions_linked"
+  - "evidence_locators_carried"
+
+error_namespaces:
+  - "CFG"

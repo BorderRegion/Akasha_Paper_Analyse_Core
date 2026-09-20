@@ -1,0 +1,15 @@
+.page { display: flex; flex-direction: column; gap: 14px; }
+.header { display: flex; flex-direction: column; gap: 4px; }
+.toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.matrix { width: 100%; border-collapse: collapse; }
+.matrix th, .matrix td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--border); }
+.matrix td[data-comparable='false'] { background: var(--surface-soft); }
+.footer { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.footer input { font: inherit; width: 100%; min-width: 0; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--control-border); background: var(--surface); color: var(--text); }
+.footer label { flex: 1 1 240px; min-width: 0; }
+
+/* Narrow screens: a wide table scrolls inside its own box rather than pushing the
+   whole page sideways (docs/08 可访问性). */
+@media (max-width: 600px) {
+  .table, .matrix, .results { display: block; overflow-x: auto; white-space: normal; }
+}

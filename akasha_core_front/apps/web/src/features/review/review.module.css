@@ -1,0 +1,22 @@
+.page { display: flex; flex-direction: column; gap: 24px; }
+.header { display: flex; flex-direction: column; gap: 4px; }
+.filters { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.filters button { font: inherit; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--control-border); background: var(--surface); color: var(--text); cursor: pointer; }
+.filters button[aria-pressed='true'] { background: var(--surface-soft); border-color: var(--accent); }
+.layout { display: grid; grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr); gap: 16px; align-items: start; }
+.queue { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; max-height: 60vh; overflow: auto; }
+.queue button { display: flex; flex-direction: column; gap: 2px; width: 100%; text-align: left; font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
+.queue button[aria-current='true'] { border-color: var(--accent); background: var(--surface-soft); }
+.short { font-weight: 600; }
+.detail { display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); min-width: 0; }
+.claimHead { display: flex; gap: 8px; align-items: center; }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.columns section { border: 1px solid var(--border); border-radius: 10px; padding: 8px; }
+.columns ul { margin: 4px 0 0; padding-left: 18px; font-family: var(--font-mono); font-size: var(--text-sm); }
+.reasons { margin: 0; padding-left: 18px; color: var(--muted); font-size: var(--text-sm); }
+.records { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.records th, .records td { text-align: left; padding: 6px; border-bottom: 1px solid var(--border); }
+.decisionBar { position: sticky; bottom: 0; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 10px; background: var(--surface-soft); border-radius: 12px; }
+.reverify { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+@media (max-width: 1000px) { .layout { grid-template-columns: minmax(0, 1fr); } .queue { max-height: 32vh; } }
+@media (max-width: 600px) { .columns { grid-template-columns: minmax(0, 1fr); } .detail { padding: 16px; } .records { display: block; overflow-x: auto; } }

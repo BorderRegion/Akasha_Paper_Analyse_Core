@@ -1,0 +1,26 @@
+module_id: "cli.paperctl"
+version: "1.0.0"
+
+inputs:
+  - "CliArguments"
+
+outputs:
+  - "CliResult"
+
+dependencies:
+  - "config.settings"
+  - "operations.logging"
+
+healthcheck:
+  type: "command"
+  name: "paperctl version"
+
+idempotent: true
+
+required_checks:
+  - "version_command"
+  - "config_validate_command"
+
+error_namespaces:
+  - "CFG"
+  - "INTERNAL"

@@ -1,0 +1,26 @@
+module_id: "providers.metadata_mock"
+version: "1.0.0"
+
+inputs:
+  - "Doi"
+  - "Title"
+
+outputs:
+  - "MetadataRecord"
+
+dependencies:
+  - "providers.base"
+
+healthcheck:
+  type: "internal"
+  name: "mock_metadata_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "deterministic_lookup"
+  - "unknown_identifier_returns_absent"
+  - "no_fabricated_metadata"
+
+error_namespaces:
+  - "PROVIDER"

@@ -1,0 +1,31 @@
+module_id: "extraction.native"
+version: "1.0.0"
+
+inputs:
+  - "DocumentInspection"
+  - "PdfDocument"
+
+outputs:
+  - "ExtractedUnit"
+
+dependencies:
+  - "extraction.pdf"
+
+healthcheck:
+  type: "internal"
+  name: "native_extractor_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "paragraph_heading_caption_units"
+  - "table_detection"
+  - "figure_detection"
+  - "equation_candidate_flagged_heuristic"
+  - "reference_section_tracking"
+  - "reading_order_ordinals"
+  - "mixed_page_merge_provenance"
+  - "broken_layer_native_text_dropped"
+
+error_namespaces:
+  - "EXTRACT"

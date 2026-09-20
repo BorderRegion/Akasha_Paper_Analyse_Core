@@ -1,0 +1,41 @@
+module_id: "ingest.import"
+version: "1.0.0"
+
+inputs:
+  - "PdfFilePath"
+  - "ImportOptions"
+
+outputs:
+  - "ImportResult"
+  - "ExtractionReport"
+
+dependencies:
+  - "database.core"
+  - "storage.object_store"
+  - "extraction.pdf"
+  - "extraction.page_classifier"
+  - "extraction.native"
+  - "extraction.report"
+  - "ocr.fallback"
+
+healthcheck:
+  type: "internal"
+  name: "import_service_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "fingerprint_sha256"
+  - "duplicate_import_returns_existing_version"
+  - "asset_dedup_by_sha256"
+  - "paper_identity_by_doi_then_title"
+  - "version_labels_never_overwrite"
+  - "crop_assets_persisted"
+  - "extract001_zero_page_and_empty_text"
+  - "report_cache_content_addressed"
+
+error_namespaces:
+  - "PDF"
+  - "EXTRACT"
+  - "STORAGE"
+  - "CFG"

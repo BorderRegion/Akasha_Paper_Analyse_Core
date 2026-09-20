@@ -1,0 +1,27 @@
+module_id: "extraction.pdf"
+version: "1.0.0"
+
+inputs:
+  - "PdfBytes"
+
+outputs:
+  - "DocumentInspection"
+  - "PageRasterPng"
+
+dependencies: []
+
+healthcheck:
+  type: "internal"
+  name: "pdf_toolchain_probe"
+
+idempotent: true
+
+required_checks:
+  - "malformed_pdf_maps_pdf001"
+  - "encrypted_pdf_maps_pdf002"
+  - "zero_page_document_detected"
+  - "page_inspection_facts"
+  - "clip_render_for_crops"
+
+error_namespaces:
+  - "PDF"

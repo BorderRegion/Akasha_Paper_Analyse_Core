@@ -1,0 +1,24 @@
+module_id: "operations.logging"
+version: "1.0.0"
+
+inputs:
+  - "LogRecord"
+
+outputs:
+  - "JsonLogLine"
+
+dependencies:
+  - "config.settings"
+
+healthcheck:
+  type: "internal"
+  name: "logging_health"
+
+idempotent: true
+
+required_checks:
+  - "json_fields_present"
+  - "secret_redaction"
+
+error_namespaces:
+  - "INTERNAL"

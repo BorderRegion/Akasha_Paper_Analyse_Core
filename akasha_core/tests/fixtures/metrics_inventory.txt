@@ -1,0 +1,34 @@
+
+
+Minimum Prometheus-compatible metrics:
+
+```text
+jobs_total
+jobs_active
+jobs_failed_total
+
+tasks_total{type,state}
+task_duration_seconds{type}
+
+provider_requests_total{provider,model,status}
+provider_latency_seconds{provider,model}
+provider_rate_limit_total
+provider_schema_fail_total
+
+ocr_pages_total
+ocr_low_confidence_total
+
+evidence_created_total{type}
+claims_created_total{type}
+claims_status_total{support_state}
+verification_total{verdict,type}
+
+disk_bytes{category}
+queue_depth
+worker_active
+```
+
+Avoid high-cardinality IDs in metric labels.
+
+---
+

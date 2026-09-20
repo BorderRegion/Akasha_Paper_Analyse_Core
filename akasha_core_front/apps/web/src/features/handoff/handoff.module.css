@@ -1,0 +1,6 @@
+.panel { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.body { display: flex; flex-direction: column; gap: 10px; }
+.includeList { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); gap: 6px; }
+.includeList li { display: flex; flex-direction: column; gap: 2px; font-size: var(--text-sm); }
+.actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }

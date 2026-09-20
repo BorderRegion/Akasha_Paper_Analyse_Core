@@ -1,0 +1,36 @@
+module_id: "providers.paddle_ocr_http"
+version: "1.0.0"
+
+inputs:
+  - "OcrPageRequest"
+  - "PageImageBytes"
+
+outputs:
+  - "OcrPageResult"
+  - "OcrProviderStatus"
+
+dependencies:
+  - "config.provider_config"
+  - "providers.resilience"
+
+healthcheck:
+  type: "internal"
+  name: "ocr_provider_health"
+
+idempotent: true
+
+required_checks:
+  - "timeout_maps_ocr001"
+  - "rate_limit_maps_provider002"
+  - "malformed_ocr_maps_ocr002"
+  - "low_confidence_warns_ocr003"
+  - "missing_confidence_never_invented"
+  - "canary_synthetic_image"
+  - "plain_text_mode_image_only_request"
+  - "plain_text_confidence_unavailable_flagged"
+  - "response_mode_validation_cfg002"
+
+error_namespaces:
+  - "OCR"
+  - "PROVIDER"
+  - "CFG"

@@ -1,0 +1,47 @@
+.shell { display: grid; grid-template-columns: var(--sidebar-width) minmax(0, 1fr); grid-template-rows: var(--toolbar-height) 1fr auto; grid-template-areas: 'sidebar toolbar' 'sidebar main' 'sidebar status'; min-height: 100vh; }
+.palette { max-width: 560px; }
+.paletteSearch { display: flex; flex-wrap: wrap; gap: 12px; }
+.paletteSearch input { flex: 1 1 200px; min-width: 0; }
+.paletteLinks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.paletteLinks button { justify-content: space-between; }
+.sidebar { grid-area: sidebar; background: var(--sidebar-bg); color: var(--sidebar-text); padding: 34px 20px 24px; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; }
+.brand { display: flex; gap: 13px; align-items: center; font: 24px var(--font-serif); letter-spacing: .15em; margin: 0 8px 46px; }
+.brandSeal { display: grid; place-items: center; border: 1px solid #c0d3af66; border-radius: 50% 50% 45% 45%; width: 42px; height: 48px; color: #d9e6b9; font-size: 21px; }
+.brandEnglish { display: block; font: 12px/2 var(--font-sans); letter-spacing: .2em; color: var(--sidebar-muted); }
+.navCaption { color: var(--sidebar-muted); font-size: 12px; letter-spacing: .15em; margin: 0 14px 14px; }
+.navGroup { display: flex; flex-direction: column; gap: 6px; }
+.navLink { display: flex; align-items: center; gap: 13px; color: var(--sidebar-text); text-decoration: none; padding: 12px 14px; border-radius: 10px; font-size: 14px; transition: background var(--motion-normal); }
+.navLink:hover { background: #d2e4bc0e; }
+.navLink[aria-current='page'] { background: #cfdfb71f; color: #ecf3d9; box-shadow: inset 2px 0 #c1d1a2; }
+.navLink:focus-visible { outline-color: #d9e6b9; }
+.navSecondary { margin-top: 30px; border-top: 1px solid #c0d3af24; padding-top: 20px; }
+.sidebarNote { margin-top: auto; padding: 40px 14px 0; color: var(--sidebar-muted); }
+.sidebarNote > span { color: #c4d4b2; font: 38px var(--font-serif); }
+.sidebarNote p { margin: 10px 0 20px; font: 14px/2 var(--font-serif); }
+.sidebarNote small { font-size: 12px; letter-spacing: .16em; }
+.toolbar { grid-area: toolbar; display: flex; align-items: center; gap: 12px; padding: 0 40px; border-bottom: 1px solid var(--border); }
+.searchForm { flex: 1; max-width: 420px; }
+.searchForm input { width: 100%; min-width: 0; background: transparent !important; border-color: transparent !important; padding-left: 0 !important; font-size: 13px; }
+.searchForm input:focus { background: var(--surface) !important; border-color: var(--control-border) !important; padding-left: 12px !important; }
+.toolbarSpacer { flex: 1; }
+.main { grid-area: main; min-width: 0; width: 100%; padding: 36px 40px 50px; max-width: var(--content-max); margin-inline: auto; overflow-wrap: anywhere; }
+.statusBar { grid-area: status; border-top: 1px solid var(--border); padding: 12px 40px; font-size: 12px; color: var(--muted); letter-spacing: .04em; }
+.shell[data-focus='true'] { grid-template-columns: 0 minmax(0, 1fr); }
+.shell[data-focus='true'] .sidebar, .shell[data-focus='true'] .statusBar { display: none; }
+.skipLink { position: absolute; left: -9999px; top: 0; padding: 10px; background: var(--surface); border: 1px solid var(--control-border); border-radius: 8px; }
+.skipLink:focus { left: 12px; top: 12px; z-index: 100; }
+@media (min-width: 1600px) { .main { padding: 44px 64px 60px; } }
+@media (max-width: 1100px) { .shell { --sidebar-width: 198px; } .sidebar { padding-inline: 12px; } .main { padding: 28px 24px; } .toolbar { padding-inline: 24px; } }
+@media (max-width: 800px) {
+  .shell, .shell[data-focus='true'] { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto 1fr auto; grid-template-areas: 'sidebar' 'toolbar' 'main' 'status'; }
+  .sidebar { position: static; height: auto; padding: 16px; display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .brand { margin: 0 16px 6px 4px; font-size: 20px; width: 100%; }
+  .brandSeal { height: 32px; width: 30px; font-size: 16px; }.brandEnglish { display: inline; margin-left: 12px; }
+  .navCaption, .sidebarNote { display: none; }
+  .navGroup { flex-direction: row; flex-wrap: wrap; gap: 3px; }
+  .navSecondary { border: none; margin: 0; padding: 0; }
+  .navLink { gap: 7px; padding: 9px 10px; font-size: 12px; }.navLink svg { width: 16px; height: 16px; }
+  .toolbar { min-height: 64px; padding: 10px 20px; }.toolbarSpacer { display: none; }
+  .main { padding: 24px 20px 36px; }.statusBar { padding: 12px 20px; }
+}
+@media (max-width: 400px) { .sidebar { padding: 12px 8px; }.navLink { padding: 9px 7px; gap: 5px; }.main { padding: 20px 12px; }.toolbar { padding-inline: 12px; } }

@@ -1,0 +1,28 @@
+module_id: "knowledge.tags"
+version: "1.0.0"
+
+inputs:
+  - "TagName"
+  - "Namespace"
+
+outputs:
+  - "TagRow"
+  - "TagAliasRow"
+
+dependencies:
+  - "database.core"
+
+healthcheck:
+  type: "internal"
+  name: "tags_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "frozen_namespace_families"
+  - "normalization_deterministic"
+  - "aliases_never_repointed"
+  - "candidates_require_promotion"
+
+error_namespaces:
+  - "CFG"

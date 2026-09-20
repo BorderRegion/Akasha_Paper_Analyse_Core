@@ -1,0 +1,18 @@
+/* Wide screens: analysis ≈34% / original ≈66% (docs/03 §S05). */
+.reader { display: flex; flex-direction: column; gap: 12px; flex: 2 1 0; min-width: 0; border-left: 1px solid var(--border); padding-left: 16px; position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; }
+.toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: var(--text-sm); }
+.toolbar input { width: 5rem; font: inherit; padding: 4px 6px; border-radius: 8px; border: 1px solid var(--control-border); background: var(--surface); color: var(--text); }
+.canvasArea { position: relative; display: flex; flex-direction: column; gap: 12px; overflow: auto; max-height: 70vh; flex-shrink: 0; background: var(--surface-soft); padding: 12px; border-radius: 12px; }
+.pageBox { position: relative; background: var(--surface); border: 1px solid var(--border); min-height: 220px; }
+.highlight { position: absolute; background: rgba(69, 107, 91, 0.28); outline: 2px solid var(--accent); pointer-events: none; }
+.inspector { display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); overflow-wrap: anywhere; }
+.inspector blockquote { margin: 0 0 12px; padding: 16px; background: var(--surface-soft); border-left: 3px solid var(--accent); line-height: 1.8; }
+.inspectorHead { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.sources { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-size: var(--text-sm); }
+.sources dd { margin: 0; min-width: 0; }
+.evidenceList ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.footer { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .sources { grid-template-columns: 1fr; }
+  .reader { box-sizing: border-box; flex: none; width: 100%; border-left: none; padding-left: 0; position: static; max-height: none; order: -1; }
+}

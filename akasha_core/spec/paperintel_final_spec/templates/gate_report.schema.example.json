@@ -1,0 +1,17 @@
+{
+  "phase": "P08",
+  "spec_version": "1.0.0",
+  "result": "PASS",
+  "started_at": "2026-01-01T00:00:00Z",
+  "finished_at": "2026-01-01T00:01:00Z",
+  "checks": [
+    {
+      "id": "P08-C01",
+      "name": "invented numeric result detected",
+      "result": "PASS",
+      "evidence": "pytest::test_numeric_hallucination"
+    }
+  ],
+  "warnings": [],
+  "blockers": []
+}

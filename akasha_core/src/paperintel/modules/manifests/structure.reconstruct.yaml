@@ -1,0 +1,29 @@
+module_id: "structure.reconstruct"
+version: "1.0.0"
+
+inputs:
+  - "ExtractionReport"
+
+outputs:
+  - "SectionDraft"
+  - "SectionAssignment"
+
+dependencies:
+  - "extraction.report"
+  - "extraction.native"
+
+healthcheck:
+  type: "internal"
+  name: "reconstruction_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "deterministic_tree_for_identical_input"
+  - "canonical_class_mapping"
+  - "numbered_subsections_follow_parents"
+  - "front_matter_title_section"
+  - "flat_fallback_without_headings"
+
+error_namespaces:
+  - "STRUCTURE"

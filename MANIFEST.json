@@ -1,0 +1,2087 @@
+{
+  "release": "Akasha",
+  "date": "2026-09-20",
+  "frontend": "latest tested quiet-green UI; source and prebuilt dist included",
+  "excluded": [
+    ".DS_Store",
+    ".coverage",
+    ".crt",
+    ".db",
+    ".git",
+    ".gitkeep",
+    ".hypothesis",
+    ".key",
+    ".log",
+    ".p12",
+    ".pem",
+    ".pfx",
+    ".pyc",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".sqlite",
+    ".sqlite3",
+    ".tsbuildinfo",
+    ".venv",
+    ".zip",
+    "DELIVERY_MANIFEST.json",
+    "MANIFEST.json",
+    "PACKAGE_MANIFEST.json",
+    "REVIEW_CHANGELOG.json",
+    "__pycache__",
+    "artifacts",
+    "data",
+    "for_test_paper_for_u_for_test",
+    "node_modules",
+    "playwright-report",
+    "test-results"
+  ],
+  "inclusion_roots": [
+    "akasha_core/src",
+    "akasha_core/migrations",
+    "akasha_core/tests",
+    "akasha_core/spec/paperintel_final_spec/templates",
+    "akasha_core_front/apps/web/src",
+    "akasha_core_front/apps/web/dist",
+    "akasha_core_front/apps/web/tests/unit",
+    "akasha_core_front/apps/web/tests/contract",
+    "akasha_core_front/apps/web/tests/support"
+  ],
+  "excluded_historical_tests": [
+    "akasha_core/tests/integration/frontend_preflight/test_ux_001_baseline.py",
+    "akasha_core/tests/integration/frontend_preflight/test_ux_006_baseline_lock.py",
+    "akasha_core/tests/integration/p03/test_real_paper.py",
+    "akasha_core/tests/unit/test_review_gate.py",
+    "akasha_core_front/apps/web/tests/unit/ux-060-real-api.test.ts",
+    "akasha_core_front/apps/web/tests/unit/ux-061-capability-coverage.test.ts",
+    "akasha_core_front/apps/web/tests/unit/ux-062-backend-regression.test.ts"
+  ],
+  "sanitized_files": [
+    "akasha_core/.env.example",
+    "akasha_core/tests/contract/test_review_contracts.py",
+    "akasha_core/tests/contract/test_spec_templates.py",
+    "akasha_core/tests/integration/p04/test_evidence_store.py",
+    "akasha_core/tests/integration/p12/test_rest_contract.py",
+    "akasha_core_front/apps/web/package.json",
+    "akasha_core_front/apps/web/tests/unit/ux-057-accessibility.test.tsx",
+    "akasha_core_front/apps/web/tests/unit/ux-058-059-build.test.ts"
+  ],
+  "note": "Hashes cover every payload file except this manifest. Historical runtime evidence is intentionally omitted.",
+  "files": {
+    "README_ZH.md": {
+      "bytes": 4689,
+      "sha256": "be0822093a220e456e17ed8005a65f6a9500b995913f2a2c18a933b878677c8d"
+    },
+    "akasha_core/.env.example": {
+      "bytes": 1190,
+      "sha256": "f4003041de82185dec21d0e41f4874c75fc8328522564a3c6764a1ae7b072c41"
+    },
+    "akasha_core/.gitignore": {
+      "bytes": 486,
+      "sha256": "fb1758708155af1c27d390b2055f233f65a1a1fc227ffbb2cbb8ffaa4d3073a4"
+    },
+    "akasha_core/README.md": {
+      "bytes": 161,
+      "sha256": "1d210258c6f1069173583599cad7a9b5179b24d21e783102f977693332298417"
+    },
+    "akasha_core/alembic.ini": {
+      "bytes": 655,
+      "sha256": "76b0dc6d42c136e387c78fe424204eda2855ce6d9a01aab238bab1068b60b365"
+    },
+    "akasha_core/config/paperintel.example.yaml": {
+      "bytes": 900,
+      "sha256": "7ce32406b31f8ec31d3125fee93bd0abbf5ce1952b589f5471045a6daa8d8de5"
+    },
+    "akasha_core/config/providers.example.yaml": {
+      "bytes": 904,
+      "sha256": "5bc5b4f05e41f484f44997813922506dc64d25b5d5933c9c8fc237b589a8706a"
+    },
+    "akasha_core/config/providers.mock.yaml": {
+      "bytes": 627,
+      "sha256": "99c5b8453714e08a00511f2eccf042e42c6c42371de0f351c014f938fcae76b1"
+    },
+    "akasha_core/docker-compose.yml": {
+      "bytes": 844,
+      "sha256": "dea9276002dc90328a2e0f6ccd354680f5db2b5606a87079aab57a042cd14879"
+    },
+    "akasha_core/docker/db/Dockerfile": {
+      "bytes": 389,
+      "sha256": "d84e465a5f4f87e888aca0d191b0e4085cfc4b9f0831b23253dd7331af05e9f9"
+    },
+    "akasha_core/migrations/env.py": {
+      "bytes": 2697,
+      "sha256": "ac96ad7c5948c1c5c895f455821ab4eb731a63338b605fcc4891155bef2680ef"
+    },
+    "akasha_core/migrations/script.py.mako": {
+      "bytes": 616,
+      "sha256": "412ad6a828a6723d65ab89fa30e630f9995ba36f592815882e0568dc669587a7"
+    },
+    "akasha_core/migrations/versions/a7c4e91b2f38_p09_search_projection.py": {
+      "bytes": 3874,
+      "sha256": "4460d42d67899a785a7c93f2c987999e2641d171781d99f7c910f78cdae4ff87"
+    },
+    "akasha_core/migrations/versions/bde0be4528ea_base_schema.py": {
+      "bytes": 52277,
+      "sha256": "0e344a58a97b133e48bc9d4c75bfedda7659311b2380c78194af9a34a129ac32"
+    },
+    "akasha_core/migrations/versions/c21f098af012_review_provenance.py": {
+      "bytes": 670,
+      "sha256": "293db0af6612082bf8c9f52a3721b076cda6adcc3ad8ca751aa4ba7bbc1fba90"
+    },
+    "akasha_core/migrations/versions/d32a109bf123_task_retry_deadline.py": {
+      "bytes": 505,
+      "sha256": "7dcdafc8dab37564a714b58549f10c0a979f0deb34e8aedc6fca3d666b650a0d"
+    },
+    "akasha_core/migrations/versions/e41f7c9a2b60_ui_surface.py": {
+      "bytes": 10965,
+      "sha256": "daa21ef7f5e5318299395128bbad5e7e9d95fe68a119a55032fcc8b01e125364"
+    },
+    "akasha_core/pyproject.toml": {
+      "bytes": 1977,
+      "sha256": "d4ce5ef3dec1b2037e52d7b4f7babdbd57a15c409c16616f7f98c3bd6dae5a7c"
+    },
+    "akasha_core/requirements-tested.txt": {
+      "bytes": 1085,
+      "sha256": "056b425f30f7583838b03b83d21372e6c51cf91fc96a27f129d297c6ec7a36ec"
+    },
+    "akasha_core/spec/paperintel_final_spec/templates/agent_result.example.json": {
+      "bytes": 418,
+      "sha256": "9247b9f492f27225fedb9bb5cd52861042c28bcb1c71e6af712c01667e9d836a"
+    },
+    "akasha_core/spec/paperintel_final_spec/templates/debug_bundle_manifest.example.json": {
+      "bytes": 429,
+      "sha256": "80ce69001f0225a62ff29a38fe587a17892489a531183492372705321e898836"
+    },
+    "akasha_core/spec/paperintel_final_spec/templates/gate_report.schema.example.json": {
+      "bytes": 368,
+      "sha256": "e9309762a86ca4cc7fa52cf1a2e665311af507a3c17eb674720144336c98f4f2"
+    },
+    "akasha_core/spec/paperintel_final_spec/templates/module_manifest.example.yaml": {
+      "bytes": 460,
+      "sha256": "1a936b6d0687f4942c5949e05f8704327d87bc103f6649c9fb60e0122f6d7f02"
+    },
+    "akasha_core/spec/paperintel_final_spec/templates/provider_config.example.yaml": {
+      "bytes": 610,
+      "sha256": "baf111316e9d4a45c5e6a7bc3569431516056db27e08a979527c5c01ee100a59"
+    },
+    "akasha_core/src/paperintel/__init__.py": {
+      "bytes": 283,
+      "sha256": "704bb0c71faac084d5345d2356260a5a21e84d2196797503dc354e1a3f4cd8fc"
+    },
+    "akasha_core/src/paperintel/agents/__init__.py": {
+      "bytes": 178,
+      "sha256": "3debccf36454a9cd507560840af26fc07aa964fddf012e011c67b7ac0e7be749"
+    },
+    "akasha_core/src/paperintel/agents/base.py": {
+      "bytes": 19174,
+      "sha256": "1bf0822580ef0ad331f60299116dcc00b3c6d132c51c1a3d330a02ed5cc5fbf6"
+    },
+    "akasha_core/src/paperintel/agents/builtin.py": {
+      "bytes": 7450,
+      "sha256": "bbc805b415771e9c1ce4741ff9c40641b2de61ed06890657c1793939c82e9a6f"
+    },
+    "akasha_core/src/paperintel/agents/firewall.py": {
+      "bytes": 11163,
+      "sha256": "d7f4a58b51d026f36e4f861ce81cf2ee1df325b638678400a6071cced5ed2b3a"
+    },
+    "akasha_core/src/paperintel/agents/prompts.py": {
+      "bytes": 14019,
+      "sha256": "71612ca83a3c2cea379414bf814480b044b73f924210c6968adac9f73b8d58ff"
+    },
+    "akasha_core/src/paperintel/agents/tools.py": {
+      "bytes": 8454,
+      "sha256": "054a837a446c38ccfd27936b304b18df3039857add51b591b5ed79b5151f8b54"
+    },
+    "akasha_core/src/paperintel/api/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/api/app.py": {
+      "bytes": 39925,
+      "sha256": "6077a4c577b1268078684f479283903300f7347896a431f6abfc8672472127f3"
+    },
+    "akasha_core/src/paperintel/api/ui.py": {
+      "bytes": 214,
+      "sha256": "9f55952f60ce15c2c26e9b9b4825f595475bb71fe523113a5cc4bc4320bbe9a8"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/__init__.py": {
+      "bytes": 50,
+      "sha256": "651c6f8458316e2fb15f8c65d9861ff68498335b2bf37a3a68fae85a531f938d"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/collections_routes.py": {
+      "bytes": 5721,
+      "sha256": "3712e3c1115a8eb30105b6388a4b14b76cf0fdb81c6abfd5efefa04ff0a7064e"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/deps.py": {
+      "bytes": 4701,
+      "sha256": "1b2d866b0a412211da232bc2be2f2ce1bf1efca6453dbbf6c06f39dd7d814cb8"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/document_routes.py": {
+      "bytes": 4034,
+      "sha256": "35f20b74c090c15382aecc510e474703049cf335c80707634eb3bfffa8215636"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/errors.py": {
+      "bytes": 7905,
+      "sha256": "451a5a1bec404bd7fb2813faecbf0238e2a864d17d5dab54973b041a124fca97"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/import_routes.py": {
+      "bytes": 6504,
+      "sha256": "92752763e25f31e32c1e79aeea5b020c4363d2baf223833ee137748274e7c190"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/library_routes.py": {
+      "bytes": 10084,
+      "sha256": "a7026314f71a93d10b7d1489a2ee18ecf2e7515f3bc1ef989dc953f61e3580b2"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/operations_routes.py": {
+      "bytes": 11349,
+      "sha256": "40c1d2608e37871439555ec96a34e1021c10ed9163cda977038ad13d5b06944e"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/read_routes.py": {
+      "bytes": 1614,
+      "sha256": "464f9af4adeb12957e2994cb9d7adbfa845698ccd266130ff5ad53e4dd0db78d"
+    },
+    "akasha_core/src/paperintel/api/ui_routes/session_routes.py": {
+      "bytes": 8450,
+      "sha256": "83e647e1c9119e7438cda0f66b8240ac18688d85565373b931be0e875cbc8196"
+    },
+    "akasha_core/src/paperintel/cli/__init__.py": {
+      "bytes": 129,
+      "sha256": "5b84c21e79936cbaddc778ec5f0d3dfd8f917e93ddc0510788d9806de0e479d9"
+    },
+    "akasha_core/src/paperintel/cli/__main__.py": {
+      "bytes": 129,
+      "sha256": "c707f1749cfc8f47b85e2f38ca8f504f1d4a5ac3fea4c367cee99b18e97e1c9d"
+    },
+    "akasha_core/src/paperintel/cli/main.py": {
+      "bytes": 55506,
+      "sha256": "9190291fb77b26bf5792cbb4ec4ff7ccb9a940563953d0093ec2ad2002ade22a"
+    },
+    "akasha_core/src/paperintel/config/__init__.py": {
+      "bytes": 557,
+      "sha256": "d90d2f2121d092b94559888e630ba0116e3bae652f8ab1366e3330136e08cdb6"
+    },
+    "akasha_core/src/paperintel/config/fingerprint.py": {
+      "bytes": 1992,
+      "sha256": "4a94149f813e834bfc0829743de363909b5dc40499c54eb404c0433ad0d35723"
+    },
+    "akasha_core/src/paperintel/config/provider_config.py": {
+      "bytes": 4672,
+      "sha256": "765430731605241052f235ff47ee4e49e8c2c21ece1f708ca09dc9ee7b95ddf2"
+    },
+    "akasha_core/src/paperintel/config/settings.py": {
+      "bytes": 8671,
+      "sha256": "c6a3a5245ecb562f0a76dd467bfedacbefa7a888e5628859ca8fe950c6675fa9"
+    },
+    "akasha_core/src/paperintel/corpus/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/corpus/intelligence.py": {
+      "bytes": 44016,
+      "sha256": "0883552b37985650682c2baeb6d7c3c6256053c198d825149d9d629edef93b00"
+    },
+    "akasha_core/src/paperintel/database/__init__.py": {
+      "bytes": 585,
+      "sha256": "ba8d07230deaee050017c71caf097480813aa35fadbdade8674a4125d9ce07e4"
+    },
+    "akasha_core/src/paperintel/database/base.py": {
+      "bytes": 2861,
+      "sha256": "2689506abb5603dbc1f879b993c6d1cb976083d69b4588b177295968c8c61bed"
+    },
+    "akasha_core/src/paperintel/database/health.py": {
+      "bytes": 3047,
+      "sha256": "ddfdfe8ebfeec569543b9ac06485a87505b32abb46866e9b0dd6896785ba8128"
+    },
+    "akasha_core/src/paperintel/database/models.py": {
+      "bytes": 45274,
+      "sha256": "5c7a4d5f4bfee662a4528073a7d370e3f810b2cd0107c324bd80158c8241050f"
+    },
+    "akasha_core/src/paperintel/errors/__init__.py": {
+      "bytes": 621,
+      "sha256": "f16807b44428267c4c4bff8e9b9a41046f3a0d5215f0055922d3fdebd9bb32d6"
+    },
+    "akasha_core/src/paperintel/errors/catalog.py": {
+      "bytes": 14448,
+      "sha256": "1da3172907d8b960073f1f3bfcf6df750be40212ba685d2983e97c6b5216f9ee"
+    },
+    "akasha_core/src/paperintel/errors/exceptions.py": {
+      "bytes": 3432,
+      "sha256": "eff726d9d2841f67f4bdb83f423b99c49471c992a5d08791b314118bf36e78ef"
+    },
+    "akasha_core/src/paperintel/errors/ui_errors.py": {
+      "bytes": 4464,
+      "sha256": "e8a8cc528d62a8c020495dcec0c81774b15df9ab10a01b1cd98b6f7e471be6a8"
+    },
+    "akasha_core/src/paperintel/evidence/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/evidence/retrieval.py": {
+      "bytes": 7164,
+      "sha256": "3c9959668759d1f8a005ab6f2f49cfeafdc21b79511b03c445b3413c78c1b2fb"
+    },
+    "akasha_core/src/paperintel/evidence/sanity.py": {
+      "bytes": 1627,
+      "sha256": "a184937d43a25cc2bb37ca88c09fa42f79500d2bc59c682267f764b80cf183aa"
+    },
+    "akasha_core/src/paperintel/evidence/store.py": {
+      "bytes": 14526,
+      "sha256": "a69af430fa48da4be47df09aa4facf1b3f290f7a00bf9c2642d062ac23ddb770"
+    },
+    "akasha_core/src/paperintel/extraction/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/extraction/merge.py": {
+      "bytes": 3233,
+      "sha256": "40008f3f1690ee90010dd21a99cecb712a05ed681224a1c0be51959226f1a1de"
+    },
+    "akasha_core/src/paperintel/extraction/native.py": {
+      "bytes": 16842,
+      "sha256": "2e3816f2f566a1f95e8dbcccfdb06515b2aa806f5aea844e10438f791838c827"
+    },
+    "akasha_core/src/paperintel/extraction/page_classifier.py": {
+      "bytes": 7242,
+      "sha256": "081c74fd15e13b49816fc24c709be878e73149ce0556ad3195b1218c71b6b7dd"
+    },
+    "akasha_core/src/paperintel/extraction/pdf_document.py": {
+      "bytes": 7875,
+      "sha256": "ed46e2832ed00fdeb7277319f5733bb5003ec8519d4a97c04573a59224997796"
+    },
+    "akasha_core/src/paperintel/extraction/report.py": {
+      "bytes": 5668,
+      "sha256": "7e15aeab228c5b30514c147b97096e24e9cc966459f9b337bc09806c6cf9e10c"
+    },
+    "akasha_core/src/paperintel/graph/__init__.py": {
+      "bytes": 66,
+      "sha256": "84149dc765eb6d186a089e6c7ae12b3d5d6354656202a55efbd2570eef912a69"
+    },
+    "akasha_core/src/paperintel/graph/service.py": {
+      "bytes": 12556,
+      "sha256": "451a48a661946e3a3336210deaf98d4503471538acb422a1b849312288470fec"
+    },
+    "akasha_core/src/paperintel/ids.py": {
+      "bytes": 5583,
+      "sha256": "16d34b4340be305e0c215bcc2633c4c72628419aee193b3ea1e9a02501a53614"
+    },
+    "akasha_core/src/paperintel/ingest/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/ingest/fingerprint.py": {
+      "bytes": 2253,
+      "sha256": "487a9c675f49e02bd2089894db1cf8c2c04b7cede08cc946c559caa39b07dbcf"
+    },
+    "akasha_core/src/paperintel/ingest/service.py": {
+      "bytes": 21238,
+      "sha256": "bbc98973c8172680522bcf0466b5ed18b246039dcfb79edab7d526b9cd067616"
+    },
+    "akasha_core/src/paperintel/knowledge/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/knowledge/claims.py": {
+      "bytes": 8655,
+      "sha256": "f34b28a17cbb1cf9658bc3fa6912307038c8adfbba7ac5544f99a77b4b279e61"
+    },
+    "akasha_core/src/paperintel/knowledge/collections.py": {
+      "bytes": 5560,
+      "sha256": "b6c489f7a84cd4f9ee5a0bfb045d60315ca29c7e6796833124cdb2ee372a19bd"
+    },
+    "akasha_core/src/paperintel/knowledge/external.py": {
+      "bytes": 3601,
+      "sha256": "c016484a76726919d5a3bd966b1512c96d8bf714d2e83b054d4ef70ad05cfc78"
+    },
+    "akasha_core/src/paperintel/knowledge/graph.py": {
+      "bytes": 138,
+      "sha256": "25d859feb5d72b337500a873f2bc6af8930024ed571c69f0b3ffdbc1e9c017de"
+    },
+    "akasha_core/src/paperintel/knowledge/tags.py": {
+      "bytes": 8220,
+      "sha256": "6cb3704fa4f41aa6a21cd7f11387817107beeffd70651ce71602e809a6d816b3"
+    },
+    "akasha_core/src/paperintel/mcp/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/mcp/server.py": {
+      "bytes": 18294,
+      "sha256": "33f7fb83934f84c74c48a2707f2f712a1c0e63aa5d34248d09bd5447ab2103b9"
+    },
+    "akasha_core/src/paperintel/modules/__init__.py": {
+      "bytes": 2858,
+      "sha256": "404e0624f1999fc0bc55881730cf0107fc8ae247377b33be060b81df708f96c7"
+    },
+    "akasha_core/src/paperintel/modules/manifests/agents.builtin.yaml": {
+      "bytes": 469,
+      "sha256": "11da04950a34da01ebd18d4ed7ae58cb6af69593a0e7eeb3fd4bd24ce9d5f643"
+    },
+    "akasha_core/src/paperintel/modules/manifests/agents.firewall.yaml": {
+      "bytes": 771,
+      "sha256": "822396d3986c233aa11b33e67c47f5930a20962448a8838906cb3937a0eadb94"
+    },
+    "akasha_core/src/paperintel/modules/manifests/agents.framework.yaml": {
+      "bytes": 638,
+      "sha256": "cfba012691b3788a4656a7ba90c1e4b8919fa452e242dcff411c8f359e68e4d9"
+    },
+    "akasha_core/src/paperintel/modules/manifests/agents.prompts.yaml": {
+      "bytes": 400,
+      "sha256": "c7675f88a169bad2c5f75ace03c761345f48968dfb7cfb7aee4ab49d9dfcd2f3"
+    },
+    "akasha_core/src/paperintel/modules/manifests/cli.paperctl.yaml": {
+      "bytes": 350,
+      "sha256": "5263dc31f1d2185e22742957522a1b0bb3e16941d70612553809a7eb645b6a63"
+    },
+    "akasha_core/src/paperintel/modules/manifests/config.settings.yaml": {
+      "bytes": 424,
+      "sha256": "9ba46d13b709a5aabad3f0b3525ca63a28c21ad1d64016400690d10c1ff89c6c"
+    },
+    "akasha_core/src/paperintel/modules/manifests/corpus.intelligence.yaml": {
+      "bytes": 655,
+      "sha256": "4b33422cc6de25b0f9661fb2948f61983eb67479329526d9d9f2506e21d4a97d"
+    },
+    "akasha_core/src/paperintel/modules/manifests/database.core.yaml": {
+      "bytes": 471,
+      "sha256": "a449f20dc123566a929b8ccf94f64099f6354a4a8a18322c5ae26ffe1263a035"
+    },
+    "akasha_core/src/paperintel/modules/manifests/evidence.retrieval.yaml": {
+      "bytes": 578,
+      "sha256": "013b114ec59b9c57a967de7d5cc9e1a49d03d3a8f2e2c14f588fb925f74c9c5b"
+    },
+    "akasha_core/src/paperintel/modules/manifests/evidence.store.yaml": {
+      "bytes": 669,
+      "sha256": "e4af5cdb0c4bc87c9aad72c155e0f75f1e3a42adba54db13e7e36b24a4ab1688"
+    },
+    "akasha_core/src/paperintel/modules/manifests/extraction.native.yaml": {
+      "bytes": 566,
+      "sha256": "ac6a36546de2d8993da51b191ed5d0e8c0ac83d3f094adbf16846377fb6330c1"
+    },
+    "akasha_core/src/paperintel/modules/manifests/extraction.page_classifier.yaml": {
+      "bytes": 514,
+      "sha256": "bde3f046e434643e1c432a4c817695c6f3dc8f049a0c3f8ea155338b5a7f445a"
+    },
+    "akasha_core/src/paperintel/modules/manifests/extraction.pdf.yaml": {
+      "bytes": 424,
+      "sha256": "df12f701e55e24dff4ade416c624276889272b0a7e70cdc94b092191128f0446"
+    },
+    "akasha_core/src/paperintel/modules/manifests/extraction.report.yaml": {
+      "bytes": 514,
+      "sha256": "cfca1906edfb656e896b976515ed793a7c6df9dea1f424bce0a9b787b520c917"
+    },
+    "akasha_core/src/paperintel/modules/manifests/ingest.import.yaml": {
+      "bytes": 781,
+      "sha256": "c5a95ecd87cf48da2ac013164b5a798cb39e30b598427e7dbdd002ff26b55055"
+    },
+    "akasha_core/src/paperintel/modules/manifests/knowledge.claims.yaml": {
+      "bytes": 486,
+      "sha256": "9165ae3c70a0c6cb4555da794d550d2caeaac33744b8effafb87b5a421d28e66"
+    },
+    "akasha_core/src/paperintel/modules/manifests/knowledge.collections.yaml": {
+      "bytes": 455,
+      "sha256": "c71aace5aba0acf5cc0c2a423c613920352b6dac02358ef6dc27ea74fe391043"
+    },
+    "akasha_core/src/paperintel/modules/manifests/knowledge.graph.yaml": {
+      "bytes": 516,
+      "sha256": "e66f20638248dbea08c673b75d2b9f5c99e4b9db683202258aadf0decce80042"
+    },
+    "akasha_core/src/paperintel/modules/manifests/knowledge.tags.yaml": {
+      "bytes": 414,
+      "sha256": "7be016d9b7f0e69505fe3bedcd3e8cbbd8ee3ee8575eeac41e1f8b3191b20707"
+    },
+    "akasha_core/src/paperintel/modules/manifests/ocr.fallback.yaml": {
+      "bytes": 515,
+      "sha256": "2273e6265bafe0fd274ea4dd5e07f876ca97ba9875ca7f05d0fca57f756694d7"
+    },
+    "akasha_core/src/paperintel/modules/manifests/operations.disk.yaml": {
+      "bytes": 433,
+      "sha256": "75c1970280ccec2f5c5bd78a577408aad0647df5d8577078165bfaf1cf38b762"
+    },
+    "akasha_core/src/paperintel/modules/manifests/operations.gc.yaml": {
+      "bytes": 505,
+      "sha256": "b255468b1613e27c9c8994ebe16100a17c65c922a81f8428b22779d2ef3f5921"
+    },
+    "akasha_core/src/paperintel/modules/manifests/operations.health.yaml": {
+      "bytes": 369,
+      "sha256": "445da72c922ae4a5d2c9686b0664038e3d38bde5e253c7df61ffbd8b723b04bc"
+    },
+    "akasha_core/src/paperintel/modules/manifests/operations.logging.yaml": {
+      "bytes": 316,
+      "sha256": "baeacdbde6dd56322bbdb20c08375974641e2865c356b9fb3a068e615d724f43"
+    },
+    "akasha_core/src/paperintel/modules/manifests/operations.tracing.yaml": {
+      "bytes": 351,
+      "sha256": "a8b98b196d7b08f260e4d27075c9273f7a8be4631fee61e57109f68bc82eeb20"
+    },
+    "akasha_core/src/paperintel/modules/manifests/providers.factory.yaml": {
+      "bytes": 565,
+      "sha256": "4f6ef9fd8f0dec313796ac77c7f0bcb003c954cec332d6527e906c8352a2aef1"
+    },
+    "akasha_core/src/paperintel/modules/manifests/providers.metadata_mock.yaml": {
+      "bytes": 385,
+      "sha256": "e9fec6fb438e5dc20a265542060d959aa763b6bf2550662cd922b778f5a422d6"
+    },
+    "akasha_core/src/paperintel/modules/manifests/providers.mock.yaml": {
+      "bytes": 443,
+      "sha256": "4d1c4a176a05229240f583396bb13a2d7d6b99f61ebee3dae858133bd29f1d31"
+    },
+    "akasha_core/src/paperintel/modules/manifests/providers.openai_compatible.yaml": {
+      "bytes": 635,
+      "sha256": "632b89df8ee6193b6d418e15c9679dde083bcb48d84299e4d3e98f8140b1dcf4"
+    },
+    "akasha_core/src/paperintel/modules/manifests/providers.paddle_ocr_http.yaml": {
+      "bytes": 707,
+      "sha256": "cced7c2f451f1904dd1d17d1448e4baeb60b8041e8f8f6dfec8e687eee4bb595"
+    },
+    "akasha_core/src/paperintel/modules/manifests/providers.resilience.yaml": {
+      "bytes": 522,
+      "sha256": "61e657f3f2bb1fd28d70712d14787764599b6fd14dc197bbba5e7e606647789e"
+    },
+    "akasha_core/src/paperintel/modules/manifests/search.index.yaml": {
+      "bytes": 457,
+      "sha256": "835eed37e95144e2211a671c2353dea06bb0395b0d64a4d2294e9fec4e27be49"
+    },
+    "akasha_core/src/paperintel/modules/manifests/search.retrieval.yaml": {
+      "bytes": 493,
+      "sha256": "01ab9a785512d2c4e728bc42e38c903fcd39b83e69b2c3d18f4371cc00970907"
+    },
+    "akasha_core/src/paperintel/modules/manifests/storage.object_store.yaml": {
+      "bytes": 534,
+      "sha256": "e95711821d9ed7aa61ec1105b752767594e770b271943c08e4e0f412f599a0c7"
+    },
+    "akasha_core/src/paperintel/modules/manifests/structure.reconstruct.yaml": {
+      "bytes": 526,
+      "sha256": "c52db9b3b44b3bb3cd898eb8c4cea88c0d50d95b3394f09964397f35c87992cd"
+    },
+    "akasha_core/src/paperintel/modules/manifests/triage.budget.yaml": {
+      "bytes": 439,
+      "sha256": "aece5765698cd27e12c46e7de83ecb09f573ee9d6ca427934c9b3b4a597bbe76"
+    },
+    "akasha_core/src/paperintel/modules/manifests/triage.service.yaml": {
+      "bytes": 411,
+      "sha256": "f4c83363aef7701b30ad54849c189d380707a5ae39d8784547e63e9220c57feb"
+    },
+    "akasha_core/src/paperintel/modules/manifests/verification.audit.yaml": {
+      "bytes": 474,
+      "sha256": "c4e7b3abbd5cabff07b4b256b98d80f1b555bccadbe67e6f4ca071abd49ed4d2"
+    },
+    "akasha_core/src/paperintel/modules/manifests/verification.engine.yaml": {
+      "bytes": 592,
+      "sha256": "1f2f0312fa93054aafbbe9ddf7c1c4a5faddd0f83a4a3e894c5b2c310153cc98"
+    },
+    "akasha_core/src/paperintel/modules/manifests/workflow.celery.yaml": {
+      "bytes": 480,
+      "sha256": "0894f8e9b563752ed7d82d34def2d1d20597cb6eea325f8fe4e4b0f661fae93b"
+    },
+    "akasha_core/src/paperintel/modules/manifests/workflow.engine.yaml": {
+      "bytes": 742,
+      "sha256": "008d056c7658af651c4b8b1a27208810f3486310c9b75232f4c42ac7a3ef1db6"
+    },
+    "akasha_core/src/paperintel/ocr/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/ocr/fallback.py": {
+      "bytes": 3735,
+      "sha256": "252cd8b436edb7c9d649835f5f3ae2761464ee990cdc9278c3f93a5041408c5a"
+    },
+    "akasha_core/src/paperintel/operations/__init__.py": {
+      "bytes": 467,
+      "sha256": "6f758c364f8563a4413d64dd0e8606f986666619153b685893cbd12accb27797"
+    },
+    "akasha_core/src/paperintel/operations/debug.py": {
+      "bytes": 10941,
+      "sha256": "b9c7b44a78a55e4e0f3b38506c4b15d711e980dbfde8c46703025677bac72062"
+    },
+    "akasha_core/src/paperintel/operations/disk.py": {
+      "bytes": 7453,
+      "sha256": "b8b7aaea547a7398464d10191b1b45475d1919fdfa33f0193073d29da35e69f8"
+    },
+    "akasha_core/src/paperintel/operations/doctor.py": {
+      "bytes": 2966,
+      "sha256": "6b908333c0836c7c601aa97c3784827b8ce37612c1a803039c9348f51dad141f"
+    },
+    "akasha_core/src/paperintel/operations/gc.py": {
+      "bytes": 11692,
+      "sha256": "46b83e67cdd61ff7944fb8c6303a6b7a720d492776d1fb5dc5e704478268aaef"
+    },
+    "akasha_core/src/paperintel/operations/health.py": {
+      "bytes": 3633,
+      "sha256": "c019a248634ff9e9cfd44f8acf3d5d717ee5978b1d1888466a2f696edb480203"
+    },
+    "akasha_core/src/paperintel/operations/heartbeat.py": {
+      "bytes": 3843,
+      "sha256": "891c0ac8db42b9957689c0f622a3e2dd1102f944f13cbbfdea0c4fa4363e7aaf"
+    },
+    "akasha_core/src/paperintel/operations/logging.py": {
+      "bytes": 5079,
+      "sha256": "a5ed707c4c94faf3adad8bd1105a8d5f7ac935cf4ed894cfd6a23275d822aaec"
+    },
+    "akasha_core/src/paperintel/operations/metrics.py": {
+      "bytes": 5785,
+      "sha256": "d05101989775b1a1aa2ef03386b5b96f2b3b122a9ff789081e99871de2e4967c"
+    },
+    "akasha_core/src/paperintel/operations/provider_observations.py": {
+      "bytes": 4573,
+      "sha256": "37973df3632c4fbdb01863bc77b6519013880e09d91c2f5b93908a0eeeff9b04"
+    },
+    "akasha_core/src/paperintel/operations/selftest.py": {
+      "bytes": 22423,
+      "sha256": "4cf7a0786194ef2d26eccad7098f59c0e129afe58c0a1ef96b16ec58d815508f"
+    },
+    "akasha_core/src/paperintel/operations/tracing.py": {
+      "bytes": 4142,
+      "sha256": "54a9bb7d0d889588b473ec618d0e60cfd923794c1cfaf7fe5029105ffe965b08"
+    },
+    "akasha_core/src/paperintel/operations/worker_heartbeat.py": {
+      "bytes": 2990,
+      "sha256": "f02dd2bd2b58519dc01859f4caf4ad0516d10fab0b167c01e3f08dab5bd1531c"
+    },
+    "akasha_core/src/paperintel/providers/__init__.py": {
+      "bytes": 890,
+      "sha256": "76b2698afef5ecc52a2639af2cb5fec50d7b7348f7033435c3f4b403603ff04a"
+    },
+    "akasha_core/src/paperintel/providers/base.py": {
+      "bytes": 8343,
+      "sha256": "88657d409100a191b00a4091568eb64267971b6011413e6d88ed41ccca5972b5"
+    },
+    "akasha_core/src/paperintel/providers/factory.py": {
+      "bytes": 12592,
+      "sha256": "e4b8c45b127fe5c23e1981982f6dbc707f34eb9fc5758226ee2a867d090781a1"
+    },
+    "akasha_core/src/paperintel/providers/http_common.py": {
+      "bytes": 7794,
+      "sha256": "e6759e695720dad1e2d92ad95ccfb86c3188b5cd214222a2f3588d55f4ba8bec"
+    },
+    "akasha_core/src/paperintel/providers/http_embeddings.py": {
+      "bytes": 8582,
+      "sha256": "074267125417b4f5fd476a18f89339911d78a000bb730680d09380b11f8906d3"
+    },
+    "akasha_core/src/paperintel/providers/http_llm.py": {
+      "bytes": 13936,
+      "sha256": "131df97a0ba6ef3e2a0b0015fdfc6c3f32a627ca5676277551d602881cc9c9a6"
+    },
+    "akasha_core/src/paperintel/providers/http_metadata.py": {
+      "bytes": 8871,
+      "sha256": "9f56dfa806958bedb530f55e94f1d5f73a3edc401c912ac87995c35ca514b764"
+    },
+    "akasha_core/src/paperintel/providers/mocks/__init__.py": {
+      "bytes": 464,
+      "sha256": "694f23c5edca4d651dce29a9779e3f87c005eef5c67eb556d4a5926089438d8f"
+    },
+    "akasha_core/src/paperintel/providers/mocks/embedding.py": {
+      "bytes": 2741,
+      "sha256": "3c3c75cf84fe412f66e9d78aefde764f9fc3cb90df62fc0e7733f96e5489b7dc"
+    },
+    "akasha_core/src/paperintel/providers/mocks/llm.py": {
+      "bytes": 9801,
+      "sha256": "1e450988c7f7d8b7a1cefeae111135401180be93f3b958ca941520706aa8df4b"
+    },
+    "akasha_core/src/paperintel/providers/mocks/metadata.py": {
+      "bytes": 2940,
+      "sha256": "86b0325fb7fe0d5fc1e638431b226e89ee46c40e346c755639d3f2836cb33f2d"
+    },
+    "akasha_core/src/paperintel/providers/mocks/ocr.py": {
+      "bytes": 8449,
+      "sha256": "4a2933f80cafd8ddecd87814cb884ec162f1283a8ff4d05879ff23b3d4e35239"
+    },
+    "akasha_core/src/paperintel/providers/paddle_ocr.py": {
+      "bytes": 19073,
+      "sha256": "983e055270ac2c6d77957f7e236eb1dc6400e5162931a61c4c6be6d0c9eea8a9"
+    },
+    "akasha_core/src/paperintel/providers/registry.py": {
+      "bytes": 3515,
+      "sha256": "6bf4b44d2865afc8c395a730598b8a31a325042ea2ab814335a7406ac727a1a0"
+    },
+    "akasha_core/src/paperintel/providers/resilience.py": {
+      "bytes": 18411,
+      "sha256": "32bf2700a3d13576ad49e371a16d99d86ccf8b0e1935488bb7cc5fb77e4a181c"
+    },
+    "akasha_core/src/paperintel/providers/runtime.py": {
+      "bytes": 6482,
+      "sha256": "1794e80ef8c23b2142d198e1f938bedd0653da79dc159fcc9827e7056e18ac06"
+    },
+    "akasha_core/src/paperintel/schemas/__init__.py": {
+      "bytes": 2615,
+      "sha256": "cfbda5c0f08239662dc7abf062656776c504e87f05fe519efdf5b5f93d31375c"
+    },
+    "akasha_core/src/paperintel/schemas/agent.py": {
+      "bytes": 2192,
+      "sha256": "89e79e1012a8fe51803640163ca206c28723c973a7928af25dc4102775428eda"
+    },
+    "akasha_core/src/paperintel/schemas/claims.py": {
+      "bytes": 8437,
+      "sha256": "d7c42723254430ded259ddf2e6fc8ed91afc1ab1dfe67ad788a12dc7578ba84f"
+    },
+    "akasha_core/src/paperintel/schemas/common.py": {
+      "bytes": 6669,
+      "sha256": "d931d059b3732ed7c64b62977c364214bf412197f474b7b4f9c779b6065cef41"
+    },
+    "akasha_core/src/paperintel/schemas/enums.py": {
+      "bytes": 15743,
+      "sha256": "a634f831fcb90714ce185f49b3179c4879652831ba5fe166d6754879dc5418b0"
+    },
+    "akasha_core/src/paperintel/schemas/errors.py": {
+      "bytes": 982,
+      "sha256": "ca883b28312a51f9f2884c53ad4801a5cb672e7515e590a9395e8f467e39f367"
+    },
+    "akasha_core/src/paperintel/schemas/evidence.py": {
+      "bytes": 1912,
+      "sha256": "5c0417c8af7600baa6735172195af7ca3c87bd2887a3a3d48551c14c806d929d"
+    },
+    "akasha_core/src/paperintel/schemas/execution.py": {
+      "bytes": 6364,
+      "sha256": "53d6bf369edd1a9911266e181fc7b3c6fc191020c72949fcef73fea32da40a18"
+    },
+    "akasha_core/src/paperintel/schemas/extraction.py": {
+      "bytes": 7662,
+      "sha256": "32ed7215d51d0c45adf88125d3c5d26c22df7a37d6398e5c9f1b930b599fc432"
+    },
+    "akasha_core/src/paperintel/schemas/health.py": {
+      "bytes": 8215,
+      "sha256": "86d64c776e81cd203982296901c5a7a9bd4c06975a83d99aa75ae99b8c7c1b6a"
+    },
+    "akasha_core/src/paperintel/schemas/operations.py": {
+      "bytes": 8298,
+      "sha256": "80389f9839b6f9a3b6c29e92f6f3d9e5562672b1decb65f0dd57bec8db1eeda9"
+    },
+    "akasha_core/src/paperintel/schemas/paper.py": {
+      "bytes": 2484,
+      "sha256": "12325182c88e5c854e548004372dce556d8897053470ce1500966ac38ae19fa8"
+    },
+    "akasha_core/src/paperintel/schemas/structure.py": {
+      "bytes": 2303,
+      "sha256": "25b223c331f4cd3f880c6edbd6750dba0acc8f90e36372edcc776eaaf532a156"
+    },
+    "akasha_core/src/paperintel/schemas/triage.py": {
+      "bytes": 1306,
+      "sha256": "26729c63708f1f4f692147ed647e4a0718749ac0bd919f75ea2e7afd8af8d493"
+    },
+    "akasha_core/src/paperintel/schemas/ui/__init__.py": {
+      "bytes": 50,
+      "sha256": "651c6f8458316e2fb15f8c65d9861ff68498335b2bf37a3a68fae85a531f938d"
+    },
+    "akasha_core/src/paperintel/schemas/ui/envelope.py": {
+      "bytes": 2159,
+      "sha256": "0db4d3e7a1fc2c865d168566ae239f33a53fcc0b413e17e0c8a0825b6284e82e"
+    },
+    "akasha_core/src/paperintel/schemas/ui/models.py": {
+      "bytes": 12163,
+      "sha256": "e6bdd1c71ad782bd642077d6efd44cf3322e726f44eb5246ed348518a2d50d3b"
+    },
+    "akasha_core/src/paperintel/schemas/ui/session.py": {
+      "bytes": 1369,
+      "sha256": "58a8f6e56d9a115326764217deb6ebd778dd5078caac93d6d30de42e2739d356"
+    },
+    "akasha_core/src/paperintel/search/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/search/index.py": {
+      "bytes": 10247,
+      "sha256": "51505b22d95aecf106aec4891429237160110c0f0f384b80efe4f3a6fb8dcb70"
+    },
+    "akasha_core/src/paperintel/search/query.py": {
+      "bytes": 14770,
+      "sha256": "df344ff38b12f186227b34e2bdbcf2ab309a6177d505e69af3ec749f04f1b9e5"
+    },
+    "akasha_core/src/paperintel/services/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/services/embedding.py": {
+      "bytes": 2274,
+      "sha256": "722437abf34f83d825cf2a2a1d27610d2e397694923a8c84bb0c0a59ba00123b"
+    },
+    "akasha_core/src/paperintel/services/read_models.py": {
+      "bytes": 37054,
+      "sha256": "d5a954e4051d7e00c618279b200b9f6ec4efc137362f3d1248067eaadd66aa4e"
+    },
+    "akasha_core/src/paperintel/services/ui/__init__.py": {
+      "bytes": 50,
+      "sha256": "651c6f8458316e2fb15f8c65d9861ff68498335b2bf37a3a68fae85a531f938d"
+    },
+    "akasha_core/src/paperintel/services/ui/collections_ws.py": {
+      "bytes": 13077,
+      "sha256": "3f07f3f32ba897b8fbdcc368087a5cb8b606598d3885353b19474e38a08366de"
+    },
+    "akasha_core/src/paperintel/services/ui/documents.py": {
+      "bytes": 14335,
+      "sha256": "b71ef54b6191be0c251c3a4fc51f4bc74fde985cb4a68ace7b8fe35f004060b1"
+    },
+    "akasha_core/src/paperintel/services/ui/handoffs.py": {
+      "bytes": 8358,
+      "sha256": "2ed5d5a3ce5ecd935967cbd1c52f7bcacf62fb1514c59cf37027182f547b76d7"
+    },
+    "akasha_core/src/paperintel/services/ui/imports.py": {
+      "bytes": 18335,
+      "sha256": "123cc73c43e60b0fcc494da64e51cb7feb6b949c26c9b9ee8d5d3aba658678a8"
+    },
+    "akasha_core/src/paperintel/services/ui/library.py": {
+      "bytes": 12568,
+      "sha256": "2faa9d99a33cc7b7f4894ddead7123a715b1416716907a7c0f84a4367f08bb32"
+    },
+    "akasha_core/src/paperintel/services/ui/operations_service.py": {
+      "bytes": 29252,
+      "sha256": "3a0dec9372cf85017d34bd7f981232740682e0b95f182febcabb5ec4e8edc6ce"
+    },
+    "akasha_core/src/paperintel/services/ui/personal.py": {
+      "bytes": 16080,
+      "sha256": "13e7636a5d0a09c81dc7bef36563ad47f6ff206e0ef87d452c0da8f252892304"
+    },
+    "akasha_core/src/paperintel/services/ui/review.py": {
+      "bytes": 10878,
+      "sha256": "13626056aa19d0aa4e97620f0745726ebf4501373bf3b2e4d17528d09e125919"
+    },
+    "akasha_core/src/paperintel/services/ui/session.py": {
+      "bytes": 5157,
+      "sha256": "0287c664af46d5b82c9a9c3f65f262645b0542a78fcb51b20225fb44070babdf"
+    },
+    "akasha_core/src/paperintel/services/ui/tags_actions.py": {
+      "bytes": 7585,
+      "sha256": "4c0bb90a42801077f2538b8b289706d7349b56558e77b7e487a1b70c1216c049"
+    },
+    "akasha_core/src/paperintel/services/ui/workspace.py": {
+      "bytes": 24803,
+      "sha256": "98fca218c91b8035173e024fa82e210b454caa0673cf5148794902e6dc129a3c"
+    },
+    "akasha_core/src/paperintel/storage/__init__.py": {
+      "bytes": 493,
+      "sha256": "af50e63f304cb8795dcef45b651ab421c86cec2c4152c793eb8e6f5560a0bb8a"
+    },
+    "akasha_core/src/paperintel/storage/object_store.py": {
+      "bytes": 14834,
+      "sha256": "8d5d45aa2a4c8a780f9eeb2db0b8858fdf9459fbd59121b279afcba00201d242"
+    },
+    "akasha_core/src/paperintel/structure/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/structure/reconstruct.py": {
+      "bytes": 9505,
+      "sha256": "ce86ed9691139c0e8c4325b93676de7c4b9ddf5117d5b4803f374a2c0e974a9c"
+    },
+    "akasha_core/src/paperintel/triage/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/triage/budget.py": {
+      "bytes": 6810,
+      "sha256": "6e3ab429eceeeae1da57cd5bf52b89754081578bf9eeed558d6e2355bebedf53"
+    },
+    "akasha_core/src/paperintel/triage/service.py": {
+      "bytes": 4974,
+      "sha256": "2cf8c4a9df4f2a2d079dc109cb212d40377adc9240ad888d11587c39c2bb52c6"
+    },
+    "akasha_core/src/paperintel/verification/__init__.py": {
+      "bytes": 331,
+      "sha256": "d0dd3ee98cc56e596d5d172e5f1e47e248e64bacac99f1a2a08319119c6334ad"
+    },
+    "akasha_core/src/paperintel/verification/audit.py": {
+      "bytes": 11397,
+      "sha256": "a2394950543347482aee61971a1c5f3953d169716249c60d386e6bb23bc5cccc"
+    },
+    "akasha_core/src/paperintel/verification/base.py": {
+      "bytes": 4612,
+      "sha256": "3f41e14a41f9d9a8c723d00b111a5ea300ffc12e51b230fc74283e928826948d"
+    },
+    "akasha_core/src/paperintel/verification/novelty.py": {
+      "bytes": 3558,
+      "sha256": "97cf5faa1df1d3f1adcf8c75b03d6c2d04510bdb0e86a07b8ce1785bfbe2d92c"
+    },
+    "akasha_core/src/paperintel/verification/service.py": {
+      "bytes": 7592,
+      "sha256": "f4eeb60c9d072a5c67e02568cc0c183c1233db514abd1536263e8a0dc1e77c1d"
+    },
+    "akasha_core/src/paperintel/verification/support.py": {
+      "bytes": 2588,
+      "sha256": "da8f44cbf992af01c97e5a30364f720287ac21c7529e966a648ab61ffc191fd0"
+    },
+    "akasha_core/src/paperintel/verification/verifiers.py": {
+      "bytes": 18891,
+      "sha256": "e7f977f2688538790b23091f3a90030e316eeb5f4fa496c8add94d79b0712e9f"
+    },
+    "akasha_core/src/paperintel/version.py": {
+      "bytes": 420,
+      "sha256": "55d5b0fe2806ad24528f06e2e8c3ff5ba5c3f0175ed7c5d71d6a49eca54ae6ea"
+    },
+    "akasha_core/src/paperintel/web/__init__.py": {
+      "bytes": 56,
+      "sha256": "52ba1f68322edd923ca89c95371eb8dcb321471ddcdbc73956cfba741bf2ff15"
+    },
+    "akasha_core/src/paperintel/web/ui.py": {
+      "bytes": 10764,
+      "sha256": "3fa5e93da709b7a03be5d7136f45c2e0ab825f7fc5ec22d3282018425b515a08"
+    },
+    "akasha_core/src/paperintel/workflow/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/src/paperintel/workflow/celery_app.py": {
+      "bytes": 11165,
+      "sha256": "ba270933f95c9c6af5dee24730874ac20070e6097776586d7f2b6d0cb0fecffc"
+    },
+    "akasha_core/src/paperintel/workflow/engine.py": {
+      "bytes": 39469,
+      "sha256": "6312dc963fea9fbe71dea3d1de8fca52068742ae92a6a49f926d9ab26a7ad5c0"
+    },
+    "akasha_core/src/paperintel/workflow/handlers.py": {
+      "bytes": 25737,
+      "sha256": "6675ab7459242b850b830c185354dc3aba40c5c366ddaa13807f198f75c70d4d"
+    },
+    "akasha_core/tests/conftest.py": {
+      "bytes": 3746,
+      "sha256": "82b695d09bb68a11ff09203af4a3920058d2a40f8a12038909da07444b81fb3a"
+    },
+    "akasha_core/tests/contract/test_enums_frozen.py": {
+      "bytes": 7556,
+      "sha256": "fd94039114a089f50a0deaf443d25214faa79fe02279d31edd209e9dff56d84c"
+    },
+    "akasha_core/tests/contract/test_error_catalog.py": {
+      "bytes": 2820,
+      "sha256": "5972f5019a11f65848d88422c9dc67c4c49ef817478e3938fe0c436966634bef"
+    },
+    "akasha_core/tests/contract/test_module_manifests.py": {
+      "bytes": 3978,
+      "sha256": "063e5b68f2b171741a33418193cd00481999da55ca7e7c703d81bb75960ed281"
+    },
+    "akasha_core/tests/contract/test_review_contracts.py": {
+      "bytes": 1659,
+      "sha256": "fa657782af3299344f8f0f3c67cd393474bcfc0dfa63d2f69553e32e2b20a725"
+    },
+    "akasha_core/tests/contract/test_schema_firewall_shapes.py": {
+      "bytes": 8297,
+      "sha256": "e6d2c6b5ae7f8506d69c708c2f563bbc859f1c13b4357dab91635647cda458f2"
+    },
+    "akasha_core/tests/contract/test_schemas_import.py": {
+      "bytes": 2426,
+      "sha256": "107365544d879aefbc6d2f285160a8d170803e3e823d491596d1e97d43348534"
+    },
+    "akasha_core/tests/contract/test_spec_templates.py": {
+      "bytes": 3260,
+      "sha256": "5feefc6dd1dcfe8ff043e2c089cc7ee55b2549372d2fc7f4742ca7c2628895e4"
+    },
+    "akasha_core/tests/contract/test_task_transitions.py": {
+      "bytes": 4012,
+      "sha256": "db2b6a1b8863c90e94f25e78010a661311ef4c50833273f53ee02a859cb1dc08"
+    },
+    "akasha_core/tests/fixtures/README.md": {
+      "bytes": 959,
+      "sha256": "13e3e2c96db084b48ab902e0d49d25201e257d9e5fa2d084951de8049d642d8d"
+    },
+    "akasha_core/tests/fixtures/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/fixtures/canary.py": {
+      "bytes": 2475,
+      "sha256": "90e7d41e2332cbad8cbf5c4128d9cfc7c979bcfcc3bf0bd022ee8edfb865047f"
+    },
+    "akasha_core/tests/fixtures/expected/f06_truth.json": {
+      "bytes": 1182,
+      "sha256": "c74a3bc6aa1e837af78253a35699a5f8fa679ab588096e7f2c7b09d7952f1116"
+    },
+    "akasha_core/tests/fixtures/generators.py": {
+      "bytes": 18193,
+      "sha256": "82c42ab17c7653229bd6c697e971562fadb599f57d1f99cd786c580183e571e6"
+    },
+    "akasha_core/tests/fixtures/metrics_inventory.txt": {
+      "bytes": 557,
+      "sha256": "fa44b1414653edf3b64eb722eb980a3b274d47d3eb20b00e1908288c6f493c1d"
+    },
+    "akasha_core/tests/golden/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/golden/test_f06_truth.py": {
+      "bytes": 4794,
+      "sha256": "b3e3261297138f2cb079af07bdd34a703081b1b418aa7b5e9b870778c3a0811f"
+    },
+    "akasha_core/tests/integration/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/conftest.py": {
+      "bytes": 2693,
+      "sha256": "a5f3e4d3f4efa9382361fccafc40089dc85e12409423b61f8155e05c65982a0c"
+    },
+    "akasha_core/tests/integration/frontend_preflight/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/frontend_preflight/conftest.py": {
+      "bytes": 3033,
+      "sha256": "30c80384f9600af660305f2386b996a18c641904b25408548197e671b9226bbe"
+    },
+    "akasha_core/tests/integration/frontend_preflight/test_ux_002_document_types.py": {
+      "bytes": 6486,
+      "sha256": "c4b88ec79f9456e5c9bf5a27bb2c5b75bebae15e8ee5b780e56668d6cb1bd5b7"
+    },
+    "akasha_core/tests/integration/frontend_preflight/test_ux_003_auth_no_leak.py": {
+      "bytes": 5362,
+      "sha256": "d0dbdf257eb2a8bf2ad7c1dfa39af4b419b7b5db5b26bdd664cc6915365f94ab"
+    },
+    "akasha_core/tests/integration/frontend_preflight/test_ux_004_005_scope.py": {
+      "bytes": 9126,
+      "sha256": "311b0c0eda1accd41f645344d805eefc535d765f3d2869e82316b43442fbef8e"
+    },
+    "akasha_core/tests/integration/p01/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p01/test_database_crud.py": {
+      "bytes": 13030,
+      "sha256": "bb4a7f012031a9f09d244992858a715586a4d0720d008190722c58e13359b8a9"
+    },
+    "akasha_core/tests/integration/p01/test_database_health.py": {
+      "bytes": 2060,
+      "sha256": "bccbbffa2d733df0d68bfc14d065cb0551b639094b3a395891c8ae2df62edac9"
+    },
+    "akasha_core/tests/integration/p01/test_migrations.py": {
+      "bytes": 3871,
+      "sha256": "d0d325cba57b4247adb22cc20f1a0b486a4d6f82557856b8f2d777361dcaf530"
+    },
+    "akasha_core/tests/integration/p02/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p02/test_cli_operations.py": {
+      "bytes": 2431,
+      "sha256": "455ab8a793c8b501e3e59dbefac1a6c65bbc84f9ae1a16d599b6dc2ef223ed5c"
+    },
+    "akasha_core/tests/integration/p02/test_real_providers.py": {
+      "bytes": 5947,
+      "sha256": "f55181e3bceaf87054fed6db4925526a30445ad7416b2808981f7266d2e5e2ab"
+    },
+    "akasha_core/tests/integration/p03/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p03/test_cli_import.py": {
+      "bytes": 5317,
+      "sha256": "4f5d320e01611792d1626e442fa5e3e973991a0de3475c79abd78eabd9b168d0"
+    },
+    "akasha_core/tests/integration/p03/test_import_service.py": {
+      "bytes": 14919,
+      "sha256": "3f451e3411a141ef170f31ec1dc93cad44d3cee0181c56a171685d61be66a8c8"
+    },
+    "akasha_core/tests/integration/p04/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p04/test_cli_inspect.py": {
+      "bytes": 4132,
+      "sha256": "3b829011abed8c735be1b8fe8be53e466bfbf9833aa46d62d9272c10c0bd6be8"
+    },
+    "akasha_core/tests/integration/p04/test_evidence_store.py": {
+      "bytes": 18236,
+      "sha256": "29dc0011fbcf340f52abb6da420cc074d5f5c323215624e22e2d3eef5a6303d5"
+    },
+    "akasha_core/tests/integration/p05/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p05/test_cli_workflow.py": {
+      "bytes": 5856,
+      "sha256": "0573fcd82747ed2b6270ee5af363c6b29ad14376b207d751a185365162c346d4"
+    },
+    "akasha_core/tests/integration/p05/test_review_worker.py": {
+      "bytes": 3516,
+      "sha256": "872e7d840e30e0c680e3be89428b98dc0ffc5dbfe9980c49df05670116b530fa"
+    },
+    "akasha_core/tests/integration/p05/test_workflow_engine.py": {
+      "bytes": 25602,
+      "sha256": "5335f237fb19cf12b0164bed81923f3beda6034863abe61d047c56447344a83e"
+    },
+    "akasha_core/tests/integration/p06/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p06/test_agent_framework.py": {
+      "bytes": 19377,
+      "sha256": "9c455c782b18cd61d0077615f0e3e4e4df13631381f5507e25d06318b0a0f0c9"
+    },
+    "akasha_core/tests/integration/p07/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p07/conftest.py": {
+      "bytes": 409,
+      "sha256": "dfec9d02396ed287e3a924fd36df53401e55aee2c01564c14ce485590264d3a4"
+    },
+    "akasha_core/tests/integration/p07/test_golden_paper.py": {
+      "bytes": 11421,
+      "sha256": "79657d7875ad4e4adcfad362274713e7c4369e66b2061cf8ee1bf48a4ebd0da9"
+    },
+    "akasha_core/tests/integration/p07/test_ledger.py": {
+      "bytes": 9198,
+      "sha256": "95c3f30b085e9b470ef1ee3e817762b2576a022892690bc651f72a1262f715b2"
+    },
+    "akasha_core/tests/integration/p07/test_real_agent_smoke.py": {
+      "bytes": 5550,
+      "sha256": "f268860eacf8dfa0c1440992bb129ed7f1811003be7c81fcd17048390e656a8c"
+    },
+    "akasha_core/tests/integration/p07/test_triage.py": {
+      "bytes": 4693,
+      "sha256": "34a2478aab3bd4d6e301ffa8017e76dd77118bec7b7dcf3735acbe92c95e0c9c"
+    },
+    "akasha_core/tests/integration/p07/test_workflow_agents.py": {
+      "bytes": 7114,
+      "sha256": "ada0eccb62aae6d0064d7fc82cc2c2c704a2c7651b2b34bed0d01450ffaeaa59"
+    },
+    "akasha_core/tests/integration/p08/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p08/conftest.py": {
+      "bytes": 1654,
+      "sha256": "59fe724d3d0240659a5ce1520b7f7a70bbdf709398bfb62b3f89e0a8f0f11f96"
+    },
+    "akasha_core/tests/integration/p08/fixtures.py": {
+      "bytes": 3793,
+      "sha256": "1b19b296868b2a3d57cbb69c380e70ad80114cffe18f0a014a450fe26de628c3"
+    },
+    "akasha_core/tests/integration/p08/test_hallucination_fixtures.py": {
+      "bytes": 11343,
+      "sha256": "366bb5efbd0b16b2c9af5e5602d0173ac6b78ee9fd0b5d7f389c4b82fe07af0e"
+    },
+    "akasha_core/tests/integration/p08/test_review_regressions.py": {
+      "bytes": 6175,
+      "sha256": "3033d2f11715784f6cc1ef79db21123cba4fc1a261ffec139f61e55143182680"
+    },
+    "akasha_core/tests/integration/p08/test_verification_service.py": {
+      "bytes": 10612,
+      "sha256": "ff2bba38be868dd045107823f8effdd86241572412876737bb8cca2ff29bbf79"
+    },
+    "akasha_core/tests/integration/p08/test_workflow_verification.py": {
+      "bytes": 10793,
+      "sha256": "0ea0beca663d25355fabd1cc2cf4e87c14fad62c268b340de317d69933ca9f02"
+    },
+    "akasha_core/tests/integration/p09/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p09/conftest.py": {
+      "bytes": 1654,
+      "sha256": "59fe724d3d0240659a5ce1520b7f7a70bbdf709398bfb62b3f89e0a8f0f11f96"
+    },
+    "akasha_core/tests/integration/p09/test_knowledge_layer.py": {
+      "bytes": 15229,
+      "sha256": "dde014ec01e774efbc57f4fef2c0e5ff5b4bbe0d9107af614c3daa3586667e8c"
+    },
+    "akasha_core/tests/integration/p09/test_retrieval_benchmark.py": {
+      "bytes": 12284,
+      "sha256": "fbca3a6cbe1e623037ffeb32a69aa39e2cd16cb4bcb7a26b11b53a28080e58ff"
+    },
+    "akasha_core/tests/integration/p09/test_workflow_p09.py": {
+      "bytes": 6327,
+      "sha256": "b3ea4ee80c80dba66a726f867c746351e265eeac8b933cbf40836b9d2be3f00a"
+    },
+    "akasha_core/tests/integration/p10/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p10/conftest.py": {
+      "bytes": 1654,
+      "sha256": "59fe724d3d0240659a5ce1520b7f7a70bbdf709398bfb62b3f89e0a8f0f11f96"
+    },
+    "akasha_core/tests/integration/p10/test_cli_disk_gc.py": {
+      "bytes": 3395,
+      "sha256": "9f2b5fdbc145a02be32edd48a4ae48ce081e3c4b3dcc68eb724b8ab815d2f896"
+    },
+    "akasha_core/tests/integration/p10/test_resource_lifecycle.py": {
+      "bytes": 16221,
+      "sha256": "8ad8c21245e93dd5450e54f94366aa517a6bab5dbe60fcfd7ea97fd1317b6cde"
+    },
+    "akasha_core/tests/integration/p11/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p11/conftest.py": {
+      "bytes": 1654,
+      "sha256": "59fe724d3d0240659a5ce1520b7f7a70bbdf709398bfb62b3f89e0a8f0f11f96"
+    },
+    "akasha_core/tests/integration/p11/test_corpus_intelligence.py": {
+      "bytes": 22390,
+      "sha256": "ec9bb70764fdd1af7d6194d0f662a17e90bdac0ba2f21ddd337241756bbccc5c"
+    },
+    "akasha_core/tests/integration/p12/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "akasha_core/tests/integration/p12/conftest.py": {
+      "bytes": 1654,
+      "sha256": "59fe724d3d0240659a5ce1520b7f7a70bbdf709398bfb62b3f89e0a8f0f11f96"
+    },
+    "akasha_core/tests/integration/p12/test_cli_ui_security.py": {
+      "bytes": 12605,
+      "sha256": "ead3548a3120d243a2490f06fa3d46db508e5c6ec217fec0532c2046b1900c31"
+    },
+    "akasha_core/tests/integration/p12/test_e2e_final.py": {
+      "bytes": 16356,
+      "sha256": "1bcf0db0fa806b1cfef0c4a247df9e8729bd878d949d504ab8178ff86accedd3"
+    },
+    "akasha_core/tests/integration/p12/test_mcp_contract.py": {
+      "bytes": 9137,
+      "sha256": "cc254fea5f530fbec9e7cd7a02cc7e7c143426fc0ad9df425ec40126edd67d8b"
+    },
+    "akasha_core/tests/integration/p12/test_rest_contract.py": {
+      "bytes": 17441,
+      "sha256": "0f770eb17062e9169cb56c6e682c7b9919b7792d5b177fba91b1ccdc9514dd52"
+    },
+    "akasha_core/tests/integration/ui_contracts/conftest.py": {
+      "bytes": 10113,
+      "sha256": "0d89f322564671e88f53b04d1e4984ce24a4b6a2f1d4bcc74df9f9b407b6a799"
+    },
+    "akasha_core/tests/integration/ui_contracts/jsonschema_lite.py": {
+      "bytes": 6866,
+      "sha256": "033500389d14c506bcb4d613aab2420e9b0c282d7a947fbe35526d55f86f3b8b"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_debug_ui_regressions.py": {
+      "bytes": 9259,
+      "sha256": "4455c3333d1c43094262e5a2fd19535f6ca203680712bf4a50e3618d2cbba2a1"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_deep_collection_regressions.py": {
+      "bytes": 1225,
+      "sha256": "5a94a6ec46506cb9d5a69f820a6f19e9d1ccc4eb198607eb355abb29e906b0e6"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_deep_document_regressions.py": {
+      "bytes": 3257,
+      "sha256": "88ed06e8ed0bd98961b796ea2bf104ce15e2d751b2393b5ec0b752f1f2c3c017"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_deep_export_regressions.py": {
+      "bytes": 2172,
+      "sha256": "b914a10c3daf8aadd2b0915f71d6a83543f4da843871446215821c6219bf620c"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_deep_personal_regressions.py": {
+      "bytes": 3527,
+      "sha256": "ee914c38ab2d5ba28d15429465b9ff8dd570d7d64eef1ee1bb2a12ab0942d12d"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_deployment_spa.py": {
+      "bytes": 4154,
+      "sha256": "4bd8ae88edb2c760fc60611d90bd8f3a23bf3a8717679c07f5829162d5996079"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_review_handoff_api.py": {
+      "bytes": 10703,
+      "sha256": "274daba7de3232ffa16e492b44ea0ca6a29a2478bdbe8be6022acefdd3599faa"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_ux_012_session_csrf.py": {
+      "bytes": 8311,
+      "sha256": "fe7464d8d01630503a697aef67cc52d6fc876b9b819fdd6368e35862d373f178"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_ux_013_typed_contract.py": {
+      "bytes": 11546,
+      "sha256": "8c1db2970d11dba9759b3a6423984337a8ecfa513cf1084dbfda4d7b1461f1f6"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_ux_014_library_cursor.py": {
+      "bytes": 7632,
+      "sha256": "c9d8fd303ed978f76ed4612fa8fd365c3ba427d3d44d3b183dc852a58dbb9628"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_ux_015_import_upload.py": {
+      "bytes": 13421,
+      "sha256": "e298f2ef24b481b28916f0dc6dca9e41359cd6dc5249566de1a7ac7954d7562b"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_ux_016_document_range.py": {
+      "bytes": 10656,
+      "sha256": "76c4fb662b4c74a83c16ccad64065f054019cf445e945ab51831a6cc24dce47d"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_ux_017_personal_notes.py": {
+      "bytes": 14445,
+      "sha256": "c045f009f5f2f153b8e2a7a3361566a7aeb78b93994b359d6b22f3be2f8ca2c4"
+    },
+    "akasha_core/tests/integration/ui_contracts/test_ux_018_migrations.py": {
+      "bytes": 12670,
+      "sha256": "84a8a0b96918b45bc6e6787241a15e6b09257e1dc84ba39a37ca0a5725f7fb22"
+    },
+    "akasha_core/tests/unit/provider_helpers.py": {
+      "bytes": 3381,
+      "sha256": "ba1e12ce29eea476efd7da544754d253c302aa453137349ee6de815293a7e627"
+    },
+    "akasha_core/tests/unit/test_agents_firewall.py": {
+      "bytes": 9254,
+      "sha256": "c18ba5dca3c6b193bd0caf4d4ba4f10b908aecb9a4bdc14fc7eab29deffd258e"
+    },
+    "akasha_core/tests/unit/test_cli.py": {
+      "bytes": 3066,
+      "sha256": "d2bf5c3c4b34859de3190cf5825f03cc62b5749ada2624be1cdcb7a4d5054420"
+    },
+    "akasha_core/tests/unit/test_cli_providers.py": {
+      "bytes": 5033,
+      "sha256": "081ab8355abafafaa8c711cef9fe688c912f7dac4c5fac6056e308976a188674"
+    },
+    "akasha_core/tests/unit/test_config.py": {
+      "bytes": 3885,
+      "sha256": "293550b5b52749e46ff074e5304e07bcf534d50eb952cb509392e35deedde34a"
+    },
+    "akasha_core/tests/unit/test_debug_regressions.py": {
+      "bytes": 3022,
+      "sha256": "67a2ecaf61449c4d28407fccff7eaeebede617f6fbb2df01460db902fa043e54"
+    },
+    "akasha_core/tests/unit/test_errors.py": {
+      "bytes": 5599,
+      "sha256": "feb7452ba0a6883ac11b1c213d9553ca8292326bc40e7c80245edeb4513372ae"
+    },
+    "akasha_core/tests/unit/test_extraction_classifier.py": {
+      "bytes": 6753,
+      "sha256": "8fa75e8f21c9596a6580131fc3e4f0faefb84513f415c1c261373d44a7dbb067"
+    },
+    "akasha_core/tests/unit/test_extraction_native.py": {
+      "bytes": 7456,
+      "sha256": "310504b0f6d92fdcd3cbde498d6a2bd220e473313a093828a7d7d9fd3595867d"
+    },
+    "akasha_core/tests/unit/test_health_registry.py": {
+      "bytes": 2911,
+      "sha256": "4c8763c8715f35f6325c718178c5c088672feb10bab1807cc742297980eb4bc8"
+    },
+    "akasha_core/tests/unit/test_http_llm.py": {
+      "bytes": 15873,
+      "sha256": "bf01b40f5cf013d751e3bd1df801c66a3b9704f7db006751cf7c5ed374b0fd98"
+    },
+    "akasha_core/tests/unit/test_ids.py": {
+      "bytes": 4538,
+      "sha256": "ec5ce746fd4245755e886a2b1a5a11d2270aaca01d9648f14a5664b5ad6843b3"
+    },
+    "akasha_core/tests/unit/test_logging.py": {
+      "bytes": 3746,
+      "sha256": "2a900f3580dd2ceb5e40c03008fff6cda48c66728e0c119cc693690f82e316b2"
+    },
+    "akasha_core/tests/unit/test_merge_report.py": {
+      "bytes": 12120,
+      "sha256": "76f2d2e8e6b182f277761971f893fa11d28507240f3561811b88aa0f165e871c"
+    },
+    "akasha_core/tests/unit/test_mock_providers.py": {
+      "bytes": 10369,
+      "sha256": "5d0bb8d932357a97ef4794e48f501924f117b703ac1cea8220081365f8b1c3e4"
+    },
+    "akasha_core/tests/unit/test_object_store.py": {
+      "bytes": 8040,
+      "sha256": "60ee8eaddd0bb99f4419bafc584b4eb2adedf990e156d7d70f8482d9e99c8c37"
+    },
+    "akasha_core/tests/unit/test_paddle_ocr_and_embeddings.py": {
+      "bytes": 13773,
+      "sha256": "12c9ca4b3689a44463cdc8a5458f53acd12ad82e29ccb6744a6dbdd5836a31a9"
+    },
+    "akasha_core/tests/unit/test_provider_config.py": {
+      "bytes": 4123,
+      "sha256": "5a2dc0fc1ce3108e3544a406ca8662be37532f4b9d1c1f8a7b3febc430bb5074"
+    },
+    "akasha_core/tests/unit/test_provider_factory.py": {
+      "bytes": 8385,
+      "sha256": "ee1323740c4a307ed6e8b0bd211fe87be5b5b3554f28e27f589a9753338eae25"
+    },
+    "akasha_core/tests/unit/test_resilience.py": {
+      "bytes": 12219,
+      "sha256": "be0b624329c040ff6bcb956da69c123101f1958fbd1f08e349a76978f2a42b0e"
+    },
+    "akasha_core/tests/unit/test_review_runtime.py": {
+      "bytes": 7570,
+      "sha256": "b692e4176b23045da51b933e17f26a285c3204a91ca0719a2022202a1ba7c844"
+    },
+    "akasha_core/tests/unit/test_runtime_lifecycle_regressions.py": {
+      "bytes": 6130,
+      "sha256": "4a3d8e6ef6c139a960d8c50d09b4bb9c324e1f215699beb4beede4c2976ef5eb"
+    },
+    "akasha_core/tests/unit/test_structure_reconstruct.py": {
+      "bytes": 8275,
+      "sha256": "a5490fcd92d1bede8fd35ef0067df2ed26ce5f142906a0dd1f66ed901cc50313"
+    },
+    "akasha_core/tests/unit/test_system_worker_status.py": {
+      "bytes": 1041,
+      "sha256": "39efe080af5d85a3136be3863ff048003c7b6011cded7eb4172100a6ff18f5ee"
+    },
+    "akasha_core_front/apps/web/.nvmrc": {
+      "bytes": 8,
+      "sha256": "d163649b204e0ea27669c9feccac0c6b82a8263cef38b745f0383fdb6530abe0"
+    },
+    "akasha_core_front/apps/web/dist/assets/index-5BLJTEc5.js": {
+      "bytes": 539328,
+      "sha256": "c0a1d7790e4f421fd34c164d0f3affe13a1d10c8a7be1c61d6165cb5df4ebff4"
+    },
+    "akasha_core_front/apps/web/dist/assets/index-5BLJTEc5.js.map": {
+      "bytes": 2492920,
+      "sha256": "9cca3768f920a2a8711048e9a4abc6af5146be6adf6cf00d339b23fbd44a2c33"
+    },
+    "akasha_core_front/apps/web/dist/assets/index-DWYHCeCo.css": {
+      "bytes": 40131,
+      "sha256": "b0bac19e8c971c99243cf7667add337b564b2a81e10a25cd38cc26e85997eb0a"
+    },
+    "akasha_core_front/apps/web/dist/assets/pdf-DUPavs6M.js": {
+      "bytes": 334114,
+      "sha256": "f1c10e90e85ebc08f526ad3a2dab799c9fdc92d2464069af64508ee6d0d884c0"
+    },
+    "akasha_core_front/apps/web/dist/assets/pdf-DUPavs6M.js.map": {
+      "bytes": 1142213,
+      "sha256": "0812fdf11504d7127f7d340d6e5bc31089a5bd6b02e2ca9139adf6f895b8eff1"
+    },
+    "akasha_core_front/apps/web/dist/assets/pdf.worker.min-B69CGS6b.js": {
+      "bytes": 124,
+      "sha256": "ee6bb44e91cec640496193e57b6887159aad8c02d1d3dd345ec888c7c33258fc"
+    },
+    "akasha_core_front/apps/web/dist/assets/pdf.worker.min-B69CGS6b.js.map": {
+      "bytes": 269,
+      "sha256": "163f7828d836e7529b352a9d34bc814588a4b596b3437cadc3db60870cf9f60e"
+    },
+    "akasha_core_front/apps/web/dist/assets/pdf.worker.min-yatZIOMy.mjs": {
+      "bytes": 1375838,
+      "sha256": "1baa1844c89c80a5b2797c916e75ab29254be46d8e9cb53cb6364d7aad84be36"
+    },
+    "akasha_core_front/apps/web/dist/index.html": {
+      "bytes": 438,
+      "sha256": "fdc4566383d7d0d2a433c15c7694827a8c13bfae860c946f612c9245c18b9b4b"
+    },
+    "akasha_core_front/apps/web/index.html": {
+      "bytes": 336,
+      "sha256": "71437d7b37a37e88dd254fa34512a108238a6e307e352eff6b742542aad96dd2"
+    },
+    "akasha_core_front/apps/web/package-lock.json": {
+      "bytes": 169738,
+      "sha256": "b1bed108bb8603d3bdecb5c9ae08c054cb0ebb6f0a95d727b1d1097d408f1f18"
+    },
+    "akasha_core_front/apps/web/package.json": {
+      "bytes": 1343,
+      "sha256": "ee6ad8fb51d9d223f6d323d7711d3e2c26ac7daad26d21814bba5d83f34f06c6"
+    },
+    "akasha_core_front/apps/web/scripts/check-boundaries.mjs": {
+      "bytes": 1898,
+      "sha256": "4647a52a674d1b1b0d05a17265acca6d010ff97331e2889950f9aeebdd5950d3"
+    },
+    "akasha_core_front/apps/web/src/api/client.ts": {
+      "bytes": 7140,
+      "sha256": "ae11cbb0feda8261ef49efd22879f0312ea33c6d7a06ae15118aa9c3c898408a"
+    },
+    "akasha_core_front/apps/web/src/api/contract.ts": {
+      "bytes": 8550,
+      "sha256": "e63ef8518f70899620f2ea1569f14fc5a5ea01fa0fa1f00817545284684f4b92"
+    },
+    "akasha_core_front/apps/web/src/api/errors.ts": {
+      "bytes": 3878,
+      "sha256": "32a61d4de33c93eb21bf5c21122651a184546e27109ba5acc502bc68b2735f08"
+    },
+    "akasha_core_front/apps/web/src/api/ui.ts": {
+      "bytes": 16919,
+      "sha256": "9231891ed831e2de02e13007321504f2ac4e7688238efe7222b2e7919deb8482"
+    },
+    "akasha_core_front/apps/web/src/api/validate.ts": {
+      "bytes": 5962,
+      "sha256": "12c6dad894bdf7df8ca253171b3689e7b14ff1cbd6856cc58b90e7acb92fd469"
+    },
+    "akasha_core_front/apps/web/src/app/App.tsx": {
+      "bytes": 3899,
+      "sha256": "292823717c5b84f0db32d41c6fc4e7ee5f221da58b3f110c40a02364623979e8"
+    },
+    "akasha_core_front/apps/web/src/app/main.tsx": {
+      "bytes": 367,
+      "sha256": "7fd0a38e0777854c2de86b1d21bd490f78e1c70fcaf8e1582f3b955eecf9bafc"
+    },
+    "akasha_core_front/apps/web/src/app/providers.tsx": {
+      "bytes": 2907,
+      "sha256": "ed09306c36b11da5c11618638911a2aae951bc4c2661f97346c2e16ff1d3d07f"
+    },
+    "akasha_core_front/apps/web/src/app/routes.tsx": {
+      "bytes": 1461,
+      "sha256": "dcad048e85e713c8d06f5ebb46d89bb53f63e8d303cd176b65041374b1e8fd87"
+    },
+    "akasha_core_front/apps/web/src/app/shell/CommandPalette.tsx": {
+      "bytes": 1651,
+      "sha256": "7d13d7f721313d4cfba995437546d24cfba651e883485e4f4b21b38138433e50"
+    },
+    "akasha_core_front/apps/web/src/app/shell/Shell.tsx": {
+      "bytes": 3706,
+      "sha256": "6696d02ec1c898874c523a705bb134a13e97665e2747f3d50eef1f3895eb804b"
+    },
+    "akasha_core_front/apps/web/src/app/shell/Sidebar.tsx": {
+      "bytes": 2048,
+      "sha256": "5af056af810e053c93a7a7b09cd1ed128117bc7785047225f7efb7db2be6e222"
+    },
+    "akasha_core_front/apps/web/src/app/shell/StatusBar.tsx": {
+      "bytes": 976,
+      "sha256": "43ae1d470c2e79a6b326cc4ff27c76bf1dc1f042a9c499b1f3498dd33b45d0f6"
+    },
+    "akasha_core_front/apps/web/src/app/shell/shell.module.css": {
+      "bytes": 4676,
+      "sha256": "1b8a362e849257b74c2fdcfda5e27eeb70ec225ef81c9ed6a413924c9d795c09"
+    },
+    "akasha_core_front/apps/web/src/app/shell/useGlobalKeys.ts": {
+      "bytes": 1927,
+      "sha256": "803632235ef24d0efe61a0ccbe364f417e29d8cf76b65089935f5bdd938b75f5"
+    },
+    "akasha_core_front/apps/web/src/components/domain/AsyncBoundary.tsx": {
+      "bytes": 3706,
+      "sha256": "6e89bfa35846724b65e7521ae4ad8d849e95165fd537a4abb31362749efe55c0"
+    },
+    "akasha_core_front/apps/web/src/components/domain/EvidenceBadge.tsx": {
+      "bytes": 926,
+      "sha256": "303efeff0eb24aa53cec4314c91f291449cf6b777ed53139a660ebbcabbb8c8a"
+    },
+    "akasha_core_front/apps/web/src/components/domain/RecoveryNotice.tsx": {
+      "bytes": 3769,
+      "sha256": "c4f8a6235ac8264ec852f9a14263d095e4d78ff7cbaaadadd32af1f3a34aed05"
+    },
+    "akasha_core_front/apps/web/src/components/domain/SafeText.tsx": {
+      "bytes": 1718,
+      "sha256": "9b2cec07541009186b34c73830f556a312276b93d0dfdc208e1e7d40c330d8d4"
+    },
+    "akasha_core_front/apps/web/src/components/ui/Button.tsx": {
+      "bytes": 618,
+      "sha256": "dc5e2000eaf100a2919f798c33a5145898dbb67658276026541c6838e7e3659b"
+    },
+    "akasha_core_front/apps/web/src/components/ui/Card.tsx": {
+      "bytes": 588,
+      "sha256": "a8ebe9fc41418bdb27adf61251533e3f1521211b4f2f995b8358fc5426fd63ac"
+    },
+    "akasha_core_front/apps/web/src/components/ui/Distribution.tsx": {
+      "bytes": 1718,
+      "sha256": "b4432f37bb63c2f1e3079decf124145b5fc5e19eceef145629a8a7fa8d39092e"
+    },
+    "akasha_core_front/apps/web/src/components/ui/IconButton.tsx": {
+      "bytes": 645,
+      "sha256": "ad8a136666083b5aaed8e9f6df05e78b68d3f8b588a71fe5371ad50eeeb6ab3d"
+    },
+    "akasha_core_front/apps/web/src/components/ui/Modal.tsx": {
+      "bytes": 2036,
+      "sha256": "33fbea204f40d5b09104ee90dd3129363a0d6fd82aeee825e87a8193f7b4bebc"
+    },
+    "akasha_core_front/apps/web/src/components/ui/NavGlyph.tsx": {
+      "bytes": 755,
+      "sha256": "8152df57c64b1c4364c408f3cb6787caf2685040634d5ba809b1c3b596988def"
+    },
+    "akasha_core_front/apps/web/src/components/ui/QuietMark.tsx": {
+      "bytes": 986,
+      "sha256": "d2a5929ea6b267a383da54f1f00ba5e1c604de121bfc31524a85df68d36ec7be"
+    },
+    "akasha_core_front/apps/web/src/components/ui/Skeleton.tsx": {
+      "bytes": 547,
+      "sha256": "61a049122ab578bc46c39ad4978de25a20d552e6cbee95c8e10c704db614c66d"
+    },
+    "akasha_core_front/apps/web/src/components/ui/StatusPill.tsx": {
+      "bytes": 948,
+      "sha256": "3570e61de040b9514009bf1c2c64871496086ccaddf1b566f02d341c174838d1"
+    },
+    "akasha_core_front/apps/web/src/components/ui/Tag.tsx": {
+      "bytes": 515,
+      "sha256": "7e0a0368e3fc683c122102ec87e0789cdddb7703aa7d9a2bb0a2b5140a3fad1a"
+    },
+    "akasha_core_front/apps/web/src/components/ui/distribution.module.css": {
+      "bytes": 1241,
+      "sha256": "474e32f0d4c8b9ebb1e58f9fc9659a69f4079ec244a1790edbf78afde4bc9d34"
+    },
+    "akasha_core_front/apps/web/src/components/ui/modal.module.css": {
+      "bytes": 776,
+      "sha256": "703af00313c7fa95f522bc521fec8e7aa05992076f6bd100e8a77751915d06b1"
+    },
+    "akasha_core_front/apps/web/src/components/ui/ui.module.css": {
+      "bytes": 3108,
+      "sha256": "cc93e30de2ed218152edbdcf14dfcc54abd2bc921a2500d5b8996b32a44e1bbc"
+    },
+    "akasha_core_front/apps/web/src/design/motion.css": {
+      "bytes": 1455,
+      "sha256": "e527ffec6d00f4b335284c41d78079af62948ed8354e156a1c221c32b78fc129"
+    },
+    "akasha_core_front/apps/web/src/design/tokens.css": {
+      "bytes": 1840,
+      "sha256": "e000bb5a301a54432294bb46c97641066e0881fa6e7a37b6d63ce654e7100f55"
+    },
+    "akasha_core_front/apps/web/src/design/typography.css": {
+      "bytes": 2570,
+      "sha256": "baf6f8351002be221a54d926cbf2f8a9a7c50ac1d5b91f13d5b6194708dbfedb"
+    },
+    "akasha_core_front/apps/web/src/features/auth/SessionGate.tsx": {
+      "bytes": 3940,
+      "sha256": "562f91861cbf851851b1ba29215521051ad3fd943517d12241c1df27250f65b5"
+    },
+    "akasha_core_front/apps/web/src/features/auth/auth.module.css": {
+      "bytes": 2896,
+      "sha256": "5aa9f2142d022bae475099707179522681cae2ae3ab6ff5fc87fdd776e7e1f05"
+    },
+    "akasha_core_front/apps/web/src/features/collections/CollectionWorkspacePage.tsx": {
+      "bytes": 5074,
+      "sha256": "e4d29acd6f5ad8d2624cc5292b44f6020f30d2cb61f98cc9166c73a8da057848"
+    },
+    "akasha_core_front/apps/web/src/features/collections/CollectionsPage.tsx": {
+      "bytes": 3909,
+      "sha256": "57cb09c839a33ab24f162232703f2701882092c5c49a1da1121bcd38046eec00"
+    },
+    "akasha_core_front/apps/web/src/features/collections/collections.module.css": {
+      "bytes": 1399,
+      "sha256": "0df14d03325f73af92f23393950b3ff0d1a809859d01744aa05360b7a771a2ca"
+    },
+    "akasha_core_front/apps/web/src/features/compare/ComparePage.tsx": {
+      "bytes": 7689,
+      "sha256": "e114979749f4c68280b177e10905b5ca739749ea489b596d69f9b3d5817f5a46"
+    },
+    "akasha_core_front/apps/web/src/features/compare/compare.module.css": {
+      "bytes": 1008,
+      "sha256": "5780eebcc5960c2dd1477968791ecd6994a2855465e3f4646722ac0d5f1bdd0b"
+    },
+    "akasha_core_front/apps/web/src/features/diagnostics/DiagnosticsDrawer.tsx": {
+      "bytes": 7432,
+      "sha256": "3bf828e1b1664d976d2548cea9c6bb634d2dbd460ad7587e07565ef5ab3cba86"
+    },
+    "akasha_core_front/apps/web/src/features/diagnostics/diagnostics.module.css": {
+      "bytes": 819,
+      "sha256": "c03febc4a1b395e2b10f8c191c588deaf05129e7cf1ad49aed83fbbc80f4d30a"
+    },
+    "akasha_core_front/apps/web/src/features/entities/EntityDrawer.tsx": {
+      "bytes": 3607,
+      "sha256": "e7e089dd0055411625b5c32026ed7e13571bd4800d8b711b5db87b063402ba7c"
+    },
+    "akasha_core_front/apps/web/src/features/entities/entities.module.css": {
+      "bytes": 560,
+      "sha256": "0746dc4539ce006f1dd882c4a2a466531525fca7549e741285d557df73045986"
+    },
+    "akasha_core_front/apps/web/src/features/graph/RelationshipView.tsx": {
+      "bytes": 5415,
+      "sha256": "dfcc06b5fdce401033e8d17d223dccdf9580493ef2e4a1f85f94dd0409de9109"
+    },
+    "akasha_core_front/apps/web/src/features/graph/graph.module.css": {
+      "bytes": 590,
+      "sha256": "910c71296b1aaf9f52c280109f3caa58d2ac67a56fd49ced8e1d468571780247"
+    },
+    "akasha_core_front/apps/web/src/features/handoff/HandoffPanel.tsx": {
+      "bytes": 7492,
+      "sha256": "17417d9f28a4f260ad4f469428801db9108fa64d8523e1f5c25461ac2076b0e2"
+    },
+    "akasha_core_front/apps/web/src/features/handoff/handoff.module.css": {
+      "bytes": 637,
+      "sha256": "ab2b483e6bdd2c23e7a9a95ca1f45e65ada918493c8140fbcaf204d77cd6017e"
+    },
+    "akasha_core_front/apps/web/src/features/home/HomePage.tsx": {
+      "bytes": 7391,
+      "sha256": "948b86e56d2bb95d935dedcea60e7f8f845d2bcd25cbe9cd74d6b47455f1e0e4"
+    },
+    "akasha_core_front/apps/web/src/features/home/home.module.css": {
+      "bytes": 2746,
+      "sha256": "2a0c9d7aaa23cab5d441a6c92e877100276aa89b4d7ace00784c26390a1635dc"
+    },
+    "akasha_core_front/apps/web/src/features/import/ImportDialog.tsx": {
+      "bytes": 10683,
+      "sha256": "1c98ad2527d8aad2f632c7aad44cb0961e9f1448afaa486466e6df6f4ac74d6a"
+    },
+    "akasha_core_front/apps/web/src/features/import/import.module.css": {
+      "bytes": 1306,
+      "sha256": "8a8a1cd8b1d2cd845a74da3af0a2e0f57bbeb70baa1f3909350548c3590d3196"
+    },
+    "akasha_core_front/apps/web/src/features/import/importContext.tsx": {
+      "bytes": 1258,
+      "sha256": "fc4f26c900847f319bc5bece6fedf33ac795ae0b8aa53fea42bd50887c29d25e"
+    },
+    "akasha_core_front/apps/web/src/features/library/BatchActionBar.tsx": {
+      "bytes": 7158,
+      "sha256": "9857dc6c1d5e650c08b68464ab28d4bb210fe34a6e983ccb95a71039084e4131"
+    },
+    "akasha_core_front/apps/web/src/features/library/LibraryPage.tsx": {
+      "bytes": 14525,
+      "sha256": "b267dc796070aae0a4fd2d1ba19455c2cb56478b7f21fafce98c2c2620605d64"
+    },
+    "akasha_core_front/apps/web/src/features/library/PaperRow.tsx": {
+      "bytes": 4181,
+      "sha256": "82373a32ac301f75f292512886eb2fcbcd7dd19da321267e0299f1854932868e"
+    },
+    "akasha_core_front/apps/web/src/features/library/SavedSearches.tsx": {
+      "bytes": 6588,
+      "sha256": "451226f64fc4905edf6140ebc2e8313f84e25218042449c723366dfeaed4fd6a"
+    },
+    "akasha_core_front/apps/web/src/features/library/TagActions.tsx": {
+      "bytes": 5873,
+      "sha256": "af4c594b6fb3995491a88d4320d695597e9199e140f5aa8bbe61f675a1976d9b"
+    },
+    "akasha_core_front/apps/web/src/features/library/library.module.css": {
+      "bytes": 4132,
+      "sha256": "7e2fad5afd23793f900007322d9be09aa79fd77f303dbdbbaa80bf21058d95df"
+    },
+    "akasha_core_front/apps/web/src/features/library/saved.module.css": {
+      "bytes": 1055,
+      "sha256": "683f0f0dd987f3b8c794ebdfd5eaa58515797c7b90fdd4dba3fe6f4674efeefb"
+    },
+    "akasha_core_front/apps/web/src/features/operations/OperationsPage.tsx": {
+      "bytes": 18404,
+      "sha256": "1b20e39f7691d753a1ee541a1a58c54147b879b1440ccdf6b625168dbdae779c"
+    },
+    "akasha_core_front/apps/web/src/features/operations/operations.module.css": {
+      "bytes": 1755,
+      "sha256": "171cfa3b2ce2a67ea88d9f08a572b9ea7dae33faea0835c8e645f56993c6ff6f"
+    },
+    "akasha_core_front/apps/web/src/features/paper/NotesTab.tsx": {
+      "bytes": 8046,
+      "sha256": "cd5382e2f7a9995c9961a69aa3b2ec7e1c940c74b6f8edd5fa5c57f195826672"
+    },
+    "akasha_core_front/apps/web/src/features/paper/PaperWorkspacePage.tsx": {
+      "bytes": 16905,
+      "sha256": "55db3b72f386e5717427ea17c7f4f34919e3e6eb31aab9fdadce9943d0dc41d9"
+    },
+    "akasha_core_front/apps/web/src/features/paper/paper.module.css": {
+      "bytes": 3895,
+      "sha256": "3812439ac60143e7ada6ed45a6c6acbc03a025a3116925ac0f2ca85f35cf0365"
+    },
+    "akasha_core_front/apps/web/src/features/reader/EvidenceInspector.tsx": {
+      "bytes": 4536,
+      "sha256": "87b79194b2569cef9b245fef74315d511dfcd3506fd0731498a897d5a3acc1c0"
+    },
+    "akasha_core_front/apps/web/src/features/reader/ReaderPanel.tsx": {
+      "bytes": 17112,
+      "sha256": "41cc0d9c03fcd49da3440fd3d938a74d0ad19aae183f7be9f9c65253b8320adb"
+    },
+    "akasha_core_front/apps/web/src/features/reader/reader.module.css": {
+      "bytes": 2003,
+      "sha256": "4bc4537aa234e1f26c3526561395f12b352368647d7ac5cfa7ca4125f974ae78"
+    },
+    "akasha_core_front/apps/web/src/features/review/ReviewPage.tsx": {
+      "bytes": 17604,
+      "sha256": "1543857345d454cc6a92c86d24fc7236b937f4baed3d421ade34acf09a13aa35"
+    },
+    "akasha_core_front/apps/web/src/features/review/review.module.css": {
+      "bytes": 2432,
+      "sha256": "1e24bdc29366a31377d8915e0c95e5721cd6cd3f9fafbcc4600c035dda313a97"
+    },
+    "akasha_core_front/apps/web/src/features/settings/SettingsPage.tsx": {
+      "bytes": 9099,
+      "sha256": "453eac6cb281a58d48f6c8e8ae768f1b9da8b476a04d8152580e7721f813a563"
+    },
+    "akasha_core_front/apps/web/src/features/settings/settings.module.css": {
+      "bytes": 524,
+      "sha256": "a02b7864f4927716f4fad5274ec4ed556fd74bcec08b4a49712b6c750c460ee1"
+    },
+    "akasha_core_front/apps/web/src/features/techniques/TechniquesPage.tsx": {
+      "bytes": 5490,
+      "sha256": "11e162433e76ab1c72b33b8d2f3069ac51b72f083c3352e472862088bd202718"
+    },
+    "akasha_core_front/apps/web/src/features/techniques/techniques.module.css": {
+      "bytes": 899,
+      "sha256": "b632e2929ad03ac7d02c6850bd3b7a4e52308881fa313c012bbe183c8e54c354"
+    },
+    "akasha_core_front/apps/web/src/lib/a11y.ts": {
+      "bytes": 2312,
+      "sha256": "53a9ca45ff3c3b67db62e2f33d7439e2613d6691c6cb0e6fed3594a6e0b87aaa"
+    },
+    "akasha_core_front/apps/web/src/lib/apiError.ts": {
+      "bytes": 884,
+      "sha256": "32813cba85a102c7c26d2d12b10731b0a9b1787e1fa0e1d94a1333c98cf5877d"
+    },
+    "akasha_core_front/apps/web/src/lib/format.ts": {
+      "bytes": 2467,
+      "sha256": "99533c5700835d4ea3d9970abdf519362228e7332fbf2e79f0da1d889d553257"
+    },
+    "akasha_core_front/apps/web/src/lib/safeText.ts": {
+      "bytes": 3106,
+      "sha256": "7ed226561525341bb41de93d66970469eae0082219404d1304626f74959e4580"
+    },
+    "akasha_core_front/apps/web/src/lib/status.ts": {
+      "bytes": 2654,
+      "sha256": "54d8cc419095cc29b50bf3aec113b7834781b04a7cc564b317e32ac4978a0aa6"
+    },
+    "akasha_core_front/apps/web/src/reader/engineContext.tsx": {
+      "bytes": 1024,
+      "sha256": "3afec42d9d0287b25e80780cd9cb7e00a4fa83b8de862034765ed4af91b7d249"
+    },
+    "akasha_core_front/apps/web/src/reader/geometry.ts": {
+      "bytes": 6342,
+      "sha256": "06967ae1c29af3d5fde9ca9ef5c53ab97a8c703d962a93f6c30929f0ea18bf45"
+    },
+    "akasha_core_front/apps/web/src/reader/pdfEngine.ts": {
+      "bytes": 10147,
+      "sha256": "f3f53cef6bd76747991f5e435a080a4d9f345b0c891398ad78559a6d6bfd8642"
+    },
+    "akasha_core_front/apps/web/src/state/clientEvents.ts": {
+      "bytes": 5081,
+      "sha256": "5e777108148f46f7aa29019b377e6757cde43e624211fc66951d102f359e7bd3"
+    },
+    "akasha_core_front/apps/web/src/state/libraryUrl.ts": {
+      "bytes": 5742,
+      "sha256": "ea3e072696a9ece8d1be70d2b44c23af57202488882418573535329658bca179"
+    },
+    "akasha_core_front/apps/web/src/state/network.ts": {
+      "bytes": 1770,
+      "sha256": "0da4b8fdc6d44609ccd9266afd58b68c51dc4b32b2768766561a77b7977c08eb"
+    },
+    "akasha_core_front/apps/web/src/state/notes.ts": {
+      "bytes": 9232,
+      "sha256": "0f04a6ef334d9cacc69c889949eec9de557c6b64cf02a9291f1f4a67c4c4cd9a"
+    },
+    "akasha_core_front/apps/web/src/state/preferences.tsx": {
+      "bytes": 2105,
+      "sha256": "78ccfbd3e416f5be8a54b5aaf6811bb80b69ecea28ed1668531d7fb3c3ed4b0c"
+    },
+    "akasha_core_front/apps/web/src/state/queries.ts": {
+      "bytes": 11140,
+      "sha256": "c205204418876774787c53329d4047d3d0281af360750dd21c5fbf09b9ed4e01"
+    },
+    "akasha_core_front/apps/web/src/state/session.tsx": {
+      "bytes": 5296,
+      "sha256": "c8142f281600045396eb4d93e0657c215b5f348d87c0d8dfd008980dbc7dce3e"
+    },
+    "akasha_core_front/apps/web/src/state/theme.ts": {
+      "bytes": 3662,
+      "sha256": "4abed245dc56313bd9986c1a3e4b959e43cfdb28a2bb95cca81efaa17e7098a5"
+    },
+    "akasha_core_front/apps/web/src/vite-env.d.ts": {
+      "bytes": 150,
+      "sha256": "bd67abef5d1ea597110c22abb4e136ae5b4111bcfd271419feedae040d401115"
+    },
+    "akasha_core_front/apps/web/tests/contract/client.test.ts": {
+      "bytes": 5635,
+      "sha256": "7e2af0f78341415738e2e024930b0f8735f63181265919f3c41ba7d52a901d6c"
+    },
+    "akasha_core_front/apps/web/tests/contract/endpoints.json": {
+      "bytes": 9619,
+      "sha256": "14f487c541b9b7a96e2495fcb9813de4950ced233fada859bd56765fdf86a76f"
+    },
+    "akasha_core_front/apps/web/tests/contract/ui.schema.json": {
+      "bytes": 10212,
+      "sha256": "c63e8578756325db370b3ad94ebda6f2b94db5641ed6e955371d11e5ba5826ad"
+    },
+    "akasha_core_front/apps/web/tests/support/fake-engine.ts": {
+      "bytes": 2166,
+      "sha256": "2653db6dace34c339a3be7daa55fb834544b35ffb8e5fdbcb9d731f49d1f8024"
+    },
+    "akasha_core_front/apps/web/tests/support/fake-server.ts": {
+      "bytes": 29105,
+      "sha256": "89152c939cea244eae3f842d0bc2eb1ab96f4dbe1a43848d84aeba0bca26af6d"
+    },
+    "akasha_core_front/apps/web/tests/support/render.tsx": {
+      "bytes": 4018,
+      "sha256": "5df36d77b226caa9a480cc8262ef06dd408ac03b472efac23304169d6437f3a0"
+    },
+    "akasha_core_front/apps/web/tests/support/review-fixtures.ts": {
+      "bytes": 1405,
+      "sha256": "ad2a82478444056604dfc30cc738f3f141d2515371047e9182d85332b280198d"
+    },
+    "akasha_core_front/apps/web/tests/unit/debug-login.test.tsx": {
+      "bytes": 4286,
+      "sha256": "536602b107bc71a64b6fb4f246cae181ed1729e4df2784d71fbc6c919ed38558"
+    },
+    "akasha_core_front/apps/web/tests/unit/debug-ui-workflows.test.tsx": {
+      "bytes": 12420,
+      "sha256": "3f459d4a5806978e2887c515e3f7a295681b38d768ecb1362724c94891d83ceb"
+    },
+    "akasha_core_front/apps/web/tests/unit/toolchain.test.tsx": {
+      "bytes": 925,
+      "sha256": "cc610364f2cb23c68d7f1bcb5e80e8f18ae37d7c2dca5e1c0eac8f3bd9bb2b0d"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-007-theme.test.ts": {
+      "bytes": 4229,
+      "sha256": "7d2bd856c939fd1c142b36ac7a7a7dd6660f17d9f68d980b9ec408f69d76219d"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-008-controls.test.tsx": {
+      "bytes": 3824,
+      "sha256": "6c33afae26233ea6fbaedeb108aecf463db5a5ce9c79a066540a4dfafc4d7ce8"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-009-reduce-motion.test.ts": {
+      "bytes": 2153,
+      "sha256": "45247f0b67af242804bbba11be2e632ebe03672aaa65e6391ae7e8bfca9d6622"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-010-data-states.test.tsx": {
+      "bytes": 4277,
+      "sha256": "36d4a97a582b084f6f8a3a889ed81222291ab87a1b9d205f165537b685224dcc"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-011-keyboard.test.tsx": {
+      "bytes": 5947,
+      "sha256": "a1d6560da46de6e15aa341985ce8dfdea6238d15ade73991fa98cbdea77d3364"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-019-home-continue.test.tsx": {
+      "bytes": 4800,
+      "sha256": "87fca282c1577377bd939cc5c62417bc5ce0e29b723401081611fa322e6a75d9"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-020-search-kinds-ime.test.tsx": {
+      "bytes": 6452,
+      "sha256": "e3e333a87a0f055e314a2aed7b796ad2024e6b328561dffac666da6af099af82"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-021-library-return.test.tsx": {
+      "bytes": 5786,
+      "sha256": "80fdde5b5fb95088b5a219c5e52aff3dd40cf3870d82253d40b4c80ea6502924"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-022-batch-scope.test.tsx": {
+      "bytes": 5977,
+      "sha256": "8a587db2a24ede71c177d1f9390595ca21b77368daa67464a89599b2af5265fd"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-023-import-partial-failure.test.tsx": {
+      "bytes": 7120,
+      "sha256": "143947242b3f4e35997786793246678480e379d2dc95d271c5763a6366c8920f"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-024-favourite-rollback.test.tsx": {
+      "bytes": 5146,
+      "sha256": "d438e6e21bb93c8767d678c5e509e3ca4c3861d9e04fc61e32914211b778950c"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-025-overview-claims.test.tsx": {
+      "bytes": 5307,
+      "sha256": "e6d9b1ecf390ceb8e94c978f7e4877fb49796f8176a307f933091158c255e4a7"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-026-method-flow.test.tsx": {
+      "bytes": 3860,
+      "sha256": "9f54fcd4b629d46158050b191abc1a96e3e3cb01ac991bc1a259d716dab564b5"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-027-results-units.test.tsx": {
+      "bytes": 4116,
+      "sha256": "b7d1a28126eaad748e1e99c8b9e1c75919bd90f623a6ad09bd52ef2bc2e38f31"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-028-coordinate-matrix.test.tsx": {
+      "bytes": 7437,
+      "sha256": "9182cbbcbe6d15937903c2c093b2fcf7fb129bc7addb343bb528ef78d2656ff1"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-029-page-only.test.tsx": {
+      "bytes": 5060,
+      "sha256": "7a5d1403221c445935db9f2cd1dd7b9e9fcb5b7a0740296905ae1e35fd45122d"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-030-version-race.test.tsx": {
+      "bytes": 8204,
+      "sha256": "322752ecb3e73da5c28ef2a4bd00bd3559624e6f511217c0ee7b2e37a22bd524"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-031-note-autosave.test.tsx": {
+      "bytes": 11318,
+      "sha256": "cab042e87580b47d2762b8c89cb8b5219b4e25d665061fe2ea3b1e16b4c33f08"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-032-lazy-pages.test.tsx": {
+      "bytes": 6788,
+      "sha256": "0b3a948a751d354ba935695f0b85b6ebae0ca96b4cd557a405607b78c9b65ffc"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-033-review-decision.test.tsx": {
+      "bytes": 4767,
+      "sha256": "0cc375f61fe0d3121de57698ec14344959a6b6f99bd54c4dcf91ac1ec2af91dc"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-034-counter-evidence.test.tsx": {
+      "bytes": 3745,
+      "sha256": "0c6943a09577f5435b34a3b915c14e68a74c1586fc346156bbc88c09fe2fc786"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-035-reverify.test.tsx": {
+      "bytes": 5009,
+      "sha256": "6ad664233aaf960b1c4e045fcf88fe994fe2c14ac29eaf569780392ecbdadbde"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-036-history.test.tsx": {
+      "bytes": 3559,
+      "sha256": "ea08a18f03e252f6dc0c54cebbaade74325804028c6510da900cb3cf7bda0fd6"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-037-handoff.test.tsx": {
+      "bytes": 5735,
+      "sha256": "753b7c5f138341b7589efc5efebd876e686c0c58bebe8dc505170e40a6ec2196"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-038-collection-scope.test.tsx": {
+      "bytes": 3541,
+      "sha256": "35e3c9924ed5ba7ee7d229153bb3d293e9c6e0e3de75b6bfa4938e0d9ab2d1f9"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-039-techniques.test.tsx": {
+      "bytes": 3330,
+      "sha256": "0b13369b55a498c9f46ef852bd67f014eddff8c33af869650c24312d620a62e4"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-040-041-compare.test.tsx": {
+      "bytes": 6271,
+      "sha256": "37ff6e1084ffd76f5be6b9b6bc43f2ab031193f6fd6d506e277650e06699db5e"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-042-graph-caps.test.tsx": {
+      "bytes": 3422,
+      "sha256": "723bf0fe82d9808faa72f5b1307a6dd8351b5c2ae8d189460d4af80793371499"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-043-entity-identity.test.tsx": {
+      "bytes": 4808,
+      "sha256": "99fe15af01810eff99f34e101598b545c10f35f5cc0254d959c29e06189ddf87"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-044-saved-search-tags.test.tsx": {
+      "bytes": 6982,
+      "sha256": "31c7810cc365d856eb9ef56d162ab717b45ea09bee0a10ec43717245b2607884"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-045-048-operations.test.tsx": {
+      "bytes": 8955,
+      "sha256": "5254d04d1f3239198b6d826c73d5607121f8a0759e09025ffa627468c27b8d06"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-049-gc.test.tsx": {
+      "bytes": 5773,
+      "sha256": "75a2d060b46af60eab90048edd5ced6fde09b4c425096fd85f9ab59cca4a2053"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-050-diagnostics.test.tsx": {
+      "bytes": 4623,
+      "sha256": "8adf95b07b6d44023ec25729ad65cadb8c8dfd3d6b219146178f7057c1a5b36d"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-051-health-separation.test.tsx": {
+      "bytes": 5565,
+      "sha256": "9b733cbf7a0888dc4d47f95ac7d36d7ec8262dd1e90788363ebabb5ecc50007e"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-052-error-recovery.test.tsx": {
+      "bytes": 3007,
+      "sha256": "333a7fa9daab6c8247320952b0293d8f914fe6e68b77e9eb36cda227936170d2"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-053-offline.test.tsx": {
+      "bytes": 2485,
+      "sha256": "e8e7d2a420e694fcd76869d27ea750b42941317a2719198209e4ab96c98a9d34"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-054-responsive-keyboard.test.tsx": {
+      "bytes": 4836,
+      "sha256": "867300d18e6d21a5e7e785927594a8c2ca7533936b104d92c2a6bfea8cbdf5a4"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-055-stress-cache.test.tsx": {
+      "bytes": 3618,
+      "sha256": "1b312f28202ef0f81611b7b4a8ff6c240cb72fc10a00208aa48c2aa555311ef0"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-056-safe-render.test.tsx": {
+      "bytes": 4000,
+      "sha256": "fec6a01021a798fcbd4383b60ab6212016d089595cd88e71e5d0cfe2bbd5f049"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-057-accessibility.test.tsx": {
+      "bytes": 2799,
+      "sha256": "1f74a9cc9bc2055b5a04373bb988b9bb769e134bb306db41f0aba164e8e227b4"
+    },
+    "akasha_core_front/apps/web/tests/unit/ux-058-059-build.test.ts": {
+      "bytes": 3705,
+      "sha256": "fb545266fbedf6c18ddb84fae617efd97b4d90a5e1a1976ef2dc545cd784b139"
+    },
+    "akasha_core_front/apps/web/tsconfig.json": {
+      "bytes": 774,
+      "sha256": "e6643dd440ed032f9b6e847c78d60fe3c31216dae34f90d2227a2054c3e04f46"
+    },
+    "akasha_core_front/apps/web/vite.config.ts": {
+      "bytes": 1077,
+      "sha256": "7a536f8feca9e2d7b5f40b62871a94c5ec2c0ba891b0c42ec72b310f3d8468a1"
+    },
+    "akasha_core_front/apps/web/vitest.setup.ts": {
+      "bytes": 643,
+      "sha256": "c27d5cecc9ae405ef724d3e7ef4e4042716f6bcbccb01b06d95b3f17081e2c36"
+    },
+    "akasha_core_front/contracts/endpoints.json": {
+      "bytes": 9619,
+      "sha256": "14f487c541b9b7a96e2495fcb9813de4950ced233fada859bd56765fdf86a76f"
+    },
+    "akasha_core_front/contracts/ui.schema.json": {
+      "bytes": 10212,
+      "sha256": "c63e8578756325db370b3ad94ebda6f2b94db5641ed6e955371d11e5ba5826ad"
+    },
+    "akasha_core_front/contracts/view-models.ts": {
+      "bytes": 8433,
+      "sha256": "20dd8aeedf3bd8a31cbb7e8aa79f9afa4c372f54ce1ebb9ad4c7013e1d48fbf3"
+    },
+    "akasha_core_front/design/status-map.json": {
+      "bytes": 2603,
+      "sha256": "0190156013b86afd59ea9dce40254698536b808eb4d8cff22843a355ba184a03"
+    },
+    "start-local.sh": {
+      "bytes": 1306,
+      "sha256": "d0dd87e59cd5f74b821f1f6994dd241182ee04d221d06f80fcff04b1f22d4340"
+    },
+    "verify_package.py": {
+      "bytes": 575,
+      "sha256": "21f6e93bafe2bb5c246d6d704b265f64be20d8ff65d817a65ec0d0a65ad74090"
+    },
+    "README.md": {
+      "bytes": 1036,
+      "sha256": "efe19554140129484d279bb3077603d1bee135122f5541a5cdb952640b146e8b"
+    },
+    ".gitignore": {
+      "bytes": 583,
+      "sha256": "19778eb6dcfa78e1e67e775b50f89366aca62437c80a4c5de80b68221785e9e0"
+    },
+    "LICENSE": {
+      "bytes": 1063,
+      "sha256": "1b52788976dd90b0bc243c630d3e1971d9d5294b8411de89e59bac8c486287c5"
+    }
+  },
+  "delivery": "GitHub source import; original MIT license preserved; Chinese README and gitignore added",
+  "source_archive_sha256": "1a005057d5a37fc2334e904de876ce81bb7948fafc976fc4275bac6665cb1a87",
+  "github_adjusted_files": [
+    "README.md",
+    ".gitignore",
+    "LICENSE",
+    "akasha_core/pyproject.toml"
+  ],
+  "github_excluded_build_metadata": [
+    "akasha_core/src/paperintel.egg-info/PKG-INFO",
+    "akasha_core/src/paperintel.egg-info/SOURCES.txt",
+    "akasha_core/src/paperintel.egg-info/dependency_links.txt",
+    "akasha_core/src/paperintel.egg-info/entry_points.txt",
+    "akasha_core/src/paperintel.egg-info/requires.txt",
+    "akasha_core/src/paperintel.egg-info/top_level.txt"
+  ]
+}

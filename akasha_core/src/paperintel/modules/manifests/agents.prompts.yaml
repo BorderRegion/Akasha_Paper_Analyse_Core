@@ -1,0 +1,26 @@
+module_id: "agents.prompts"
+version: "1.0.0"
+
+inputs:
+  - "PromptSpec"
+
+outputs:
+  - "PromptVersionRow"
+
+dependencies:
+  - "database.core"
+
+healthcheck:
+  type: "internal"
+  name: "prompt_registry_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "registration_idempotent"
+  - "version_immutability_enforced"
+  - "unknown_variable_rejected"
+  - "builtin_prompts_seeded"
+
+error_namespaces:
+  - "CFG"

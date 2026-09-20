@@ -1,0 +1,27 @@
+module_id: "config.settings"
+version: "1.0.0"
+
+inputs:
+  - "ConfigFile"
+  - "EnvironmentVariables"
+
+outputs:
+  - "AppConfig"
+  - "ProviderConfigFile"
+
+dependencies: []
+
+healthcheck:
+  type: "internal"
+  name: "config_health"
+
+idempotent: true
+
+required_checks:
+  - "config_rejects_unknown_keys"
+  - "config_rejects_invalid_values"
+  - "provider_config_env_expansion"
+  - "secrets_never_inlined"
+
+error_namespaces:
+  - "CFG"

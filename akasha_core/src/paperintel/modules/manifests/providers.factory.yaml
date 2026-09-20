@@ -1,0 +1,31 @@
+module_id: "providers.factory"
+version: "1.0.0"
+
+inputs:
+  - "ProviderConfigFile"
+
+outputs:
+  - "ProviderRegistry"
+
+dependencies:
+  - "config.provider_config"
+  - "providers.resilience"
+  - "providers.openai_compatible"
+  - "providers.paddle_ocr_http"
+  - "providers.mock"
+  - "storage.object_store"
+
+healthcheck:
+  type: "internal"
+  name: "factory_build_check"
+
+idempotent: true
+
+required_checks:
+  - "declared_missing_api_key_fails_cfg001"
+  - "undelivered_adapter_kind_fails_loudly"
+  - "registry_family_type_checks"
+
+error_namespaces:
+  - "CFG"
+  - "PROVIDER"

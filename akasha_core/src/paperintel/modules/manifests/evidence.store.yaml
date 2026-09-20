@@ -1,0 +1,36 @@
+module_id: "evidence.store"
+version: "1.0.0"
+
+inputs:
+  - "ExtractionReport"
+
+outputs:
+  - "PersistResult"
+  - "EvidenceRow"
+  - "SectionRow"
+  - "AnalysisRunRow"
+
+dependencies:
+  - "database.core"
+  - "structure.reconstruct"
+  - "extraction.report"
+
+healthcheck:
+  type: "internal"
+  name: "evidence_store_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "evidence_insert_only_immutable"
+  - "supersession_via_new_rows"
+  - "extraction_to_evidence_idempotency"
+  - "invalid_page_rejected_by_reason"
+  - "ocr_confidence_missing_excluded"
+  - "section_tree_stable_on_reuse"
+  - "run_id_recorded_on_every_row"
+
+error_namespaces:
+  - "EVIDENCE"
+  - "STRUCTURE"
+  - "DB"

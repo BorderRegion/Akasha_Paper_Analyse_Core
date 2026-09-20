@@ -1,0 +1,28 @@
+module_id: "agents.builtin"
+version: "1.0.0"
+
+inputs:
+  - "AgentRequest"
+
+outputs:
+  - "AgentRunOutcome"
+
+dependencies:
+  - "agents.framework"
+  - "agents.prompts"
+
+healthcheck:
+  type: "internal"
+  name: "builtin_agents_registered"
+
+idempotent: false
+
+required_checks:
+  - "all_doc01_section9_agents_registered"
+  - "synthesizer_guards_unverified_claims"
+  - "context_focus_per_agent"
+  - "golden_paper_structure_and_provenance"
+
+error_namespaces:
+  - "LLM"
+  - "CFG"

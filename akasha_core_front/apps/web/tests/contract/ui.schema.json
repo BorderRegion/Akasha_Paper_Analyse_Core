@@ -1,0 +1,501 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:paperintel:ui:1.0.0",
+  "$defs": {
+    "Meta": {
+      "type": "object",
+      "properties": {
+        "contract_version": {
+          "const": "1.0.0"
+        },
+        "snapshot_id": {
+          "type": "string"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "partial": {
+          "type": "boolean"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "contract_version",
+        "snapshot_id",
+        "observed_at",
+        "partial",
+        "warnings"
+      ],
+      "additionalProperties": false
+    },
+    "Capability": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "availability": {
+          "enum": [
+            "AVAILABLE",
+            "UNAVAILABLE",
+            "DEGRADED"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "code",
+        "availability",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "Capabilities": {
+      "type": "object",
+      "properties": {
+        "ui_contract_version": {
+          "const": "1.0.0"
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Capability"
+          }
+        },
+        "limits": {
+          "type": "object",
+          "properties": {
+            "upload_file_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "upload_batch_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "upload_files": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "library_page_size": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "upload_file_bytes",
+            "upload_batch_bytes",
+            "upload_files",
+            "library_page_size"
+          ],
+          "additionalProperties": false
+        },
+        "mode": {
+          "enum": [
+            "LIVE",
+            "TEST"
+          ]
+        }
+      },
+      "required": [
+        "ui_contract_version",
+        "capabilities",
+        "limits",
+        "mode"
+      ],
+      "additionalProperties": false
+    },
+    "ObservedMetric": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "state": {
+          "enum": [
+            "FRESH",
+            "STALE",
+            "UNKNOWN"
+          ]
+        },
+        "observed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "sample_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "window_seconds": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "value",
+        "unit",
+        "state",
+        "observed_at",
+        "sample_count",
+        "window_seconds",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "UNKNOWN"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "EvidenceLocator": {
+      "type": "object",
+      "properties": {
+        "evidence_id": {
+          "type": "string"
+        },
+        "paper_version_id": {
+          "type": "string"
+        },
+        "document_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "page_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "page_label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "coordinate_space": {
+          "const": "DISPLAY_NORMALIZED_V1"
+        },
+        "rect_norm": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "minItems": 4,
+              "maxItems": 4
+            }
+          ]
+        },
+        "precision": {
+          "enum": [
+            "REGION",
+            "PAGE",
+            "TEXT_ONLY"
+          ]
+        },
+        "source_method": {
+          "type": "string"
+        },
+        "ocr_confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "transform_revision": {
+          "type": "string"
+        },
+        "extraction_run_id": {
+          "type": "string"
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "evidence_id",
+        "paper_version_id",
+        "document_sha256",
+        "page_number",
+        "page_label",
+        "coordinate_space",
+        "rect_norm",
+        "precision",
+        "source_method",
+        "ocr_confidence",
+        "transform_revision",
+        "extraction_run_id",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "REGION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "rect_norm": {
+                "type": "array"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "enum": [
+                  "PAGE",
+                  "TEXT_ONLY"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "rect_norm": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Preferences": {
+      "type": "object",
+      "properties": {
+        "theme": {
+          "enum": [
+            "LIGHT",
+            "DARK",
+            "SYSTEM"
+          ]
+        },
+        "density": {
+          "enum": [
+            "COMFORTABLE",
+            "COMPACT"
+          ]
+        },
+        "reduce_motion": {
+          "type": "boolean"
+        },
+        "single_key_shortcuts": {
+          "type": "boolean"
+        },
+        "reader_font_px": {
+          "type": "integer",
+          "minimum": 14,
+          "maximum": 24
+        },
+        "focus_default": {
+          "type": "boolean"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "theme",
+        "density",
+        "reduce_motion",
+        "single_key_shortcuts",
+        "reader_font_px",
+        "focus_default",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewDecision": {
+      "type": "object",
+      "properties": {
+        "decision_id": {
+          "type": "string"
+        },
+        "claim_id": {
+          "type": "string"
+        },
+        "paper_version_id": {
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "SEEN",
+            "NEEDS_REVIEW",
+            "RESERVATION"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "decision_id",
+        "claim_id",
+        "paper_version_id",
+        "decision",
+        "note",
+        "created_at"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/Capabilities"
+        },
+        "meta": {
+          "$ref": "#/$defs/Meta"
+        }
+      },
+      "required": [
+        "data",
+        "meta"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/EvidenceLocator"
+        },
+        "meta": {
+          "$ref": "#/$defs/Meta"
+        }
+      },
+      "required": [
+        "data",
+        "meta"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/Preferences"
+        },
+        "meta": {
+          "$ref": "#/$defs/Meta"
+        }
+      },
+      "required": [
+        "data",
+        "meta"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/ReviewDecision"
+        },
+        "meta": {
+          "$ref": "#/$defs/Meta"
+        }
+      },
+      "required": [
+        "data",
+        "meta"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/ObservedMetric"
+        },
+        "meta": {
+          "$ref": "#/$defs/Meta"
+        }
+      },
+      "required": [
+        "data",
+        "meta"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

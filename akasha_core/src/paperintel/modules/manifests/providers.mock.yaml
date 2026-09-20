@@ -1,0 +1,30 @@
+module_id: "providers.mock"
+version: "1.0.0"
+
+inputs:
+  - "LlmRequest"
+  - "OcrPageRequest"
+  - "MockMode"
+
+outputs:
+  - "LlmResponse"
+  - "OcrPageResult"
+
+dependencies:
+  - "config.settings"
+
+healthcheck:
+  type: "internal"
+  name: "mock_providers_health"
+
+idempotent: true
+
+required_checks:
+  - "deterministic_llm_modes"
+  - "deterministic_ocr_modes"
+  - "malicious_mode_classification"
+
+error_namespaces:
+  - "PROVIDER"
+  - "LLM"
+  - "OCR"

@@ -1,0 +1,367 @@
+{
+  "contract_version": "1.0.0",
+  "status": "DESIGN_NOT_DEPLOYED",
+  "notes": [
+    "Register /operations/snapshot before /operations/{operation_id}, or route with explicit converters to avoid collision.",
+    "POST library/query response shape is discriminated by kind; actual DTO union must use kind.",
+    "All data endpoints require session or bearer and scope validation."
+  ],
+  "endpoints": [
+    {"method": "GET", "path": "/v1/ui/operations/{operation_id}/download", "response": "JSONFile", "phase": "F05", "requires_auth": true, "status": "IMPLEMENTED"},
+    {"method": "POST", "path": "/v1/ui/collections", "response": "Collection", "phase": "F06", "requires_auth": true, "status": "IMPLEMENTED"},
+    {"method": "POST", "path": "/v1/ui/collections/{collection_id}/papers/{paper_id}", "response": "CollectionMembership", "phase": "F06", "requires_auth": true, "status": "IMPLEMENTED"},
+    {"method": "DELETE", "path": "/v1/ui/collections/{collection_id}/papers/{paper_id}", "response": "CollectionMembership", "phase": "F06", "requires_auth": true, "status": "IMPLEMENTED"},
+    {
+      "method": "GET",
+      "path": "/v1/ui/session",
+      "response": "Session",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "IMPLEMENTED"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/jobs",
+      "response": "JobPage",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "IMPLEMENTED"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/collections",
+      "response": "CollectionList",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "IMPLEMENTED"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/system/status",
+      "response": "SystemStatus",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "IMPLEMENTED"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/claims/{claim_id}/evidence",
+      "response": "EvidenceList",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "IMPLEMENTED"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/bootstrap",
+      "response": "Bootstrap",
+      "phase": "F02",
+      "requires_auth": false,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/session",
+      "response": "Session",
+      "phase": "F02",
+      "requires_auth": false,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/ui/session",
+      "response": "Session",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/capabilities",
+      "response": "Capabilities",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/library/query",
+      "response": "LibraryResponse",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/papers/{paper_id}/workspace",
+      "response": "Workspace",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/papers/{paper_id}/versions",
+      "response": "VersionList",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/papers/{paper_id}/jobs",
+      "response": "JobPage",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/ui/papers/{paper_id}/personal",
+      "response": "PersonalState",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/papers/{paper_id}/notes",
+      "response": "Note[]",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/notes",
+      "response": "Note",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/ui/notes/{id}",
+      "response": "Note",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/ui/notes/{id}",
+      "response": "DeleteResult",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/import-batches",
+      "response": "ImportBatch",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/import-batches/{id}",
+      "response": "ImportBatch",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/import-batches/{id}/files",
+      "response": "ImportBatch",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/import-batches/{id}/retry",
+      "response": "ImportBatch",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/ui/import-batches/{id}/items/{item_id}",
+      "response": "ImportBatch",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/paper-versions/{id}/document",
+      "response": "binary/pdf",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/assets/{asset_id}/content",
+      "response": "binary/typed",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/paper-versions/{id}/pages/{page}/evidence",
+      "response": "PageEvidence",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/review/query",
+      "response": "Page<ReviewItem>",
+      "phase": "F05",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/review/decisions",
+      "response": "ReviewDecision",
+      "phase": "F05",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/operations",
+      "response": "OperationResult",
+      "phase": "F05",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/operations/{operation_id}",
+      "response": "OperationResult",
+      "phase": "F05",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/handoffs",
+      "response": "OperationResult",
+      "phase": "F05",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/collections/{id}/workspace",
+      "response": "CollectionWorkspace",
+      "phase": "F06",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/compare",
+      "response": "Comparison",
+      "phase": "F06",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/entities/query",
+      "response": "Page<EntityCard>",
+      "phase": "F06",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/entities/{id}",
+      "response": "EntityCard",
+      "phase": "F06",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/saved-searches",
+      "response": "SavedSearch[]",
+      "phase": "F06",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/saved-searches",
+      "response": "SavedSearch",
+      "phase": "F06",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/ui/saved-searches/{id}",
+      "response": "SavedSearch",
+      "phase": "F06",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/ui/saved-searches/{id}",
+      "response": "DeleteResult",
+      "phase": "F06",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/tags/actions",
+      "response": "OperationResult",
+      "phase": "F06",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/operations/snapshot",
+      "response": "OperationSnapshot",
+      "phase": "F07",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/ui/preferences",
+      "response": "Preferences",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "PATCH",
+      "path": "/v1/ui/preferences",
+      "response": "Preferences",
+      "phase": "F02",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/ui/diagnostics",
+      "response": "DiagnosticExport",
+      "phase": "F07",
+      "requires_auth": true,
+      "status": "TO_IMPLEMENT"
+    }
+  ]
+}

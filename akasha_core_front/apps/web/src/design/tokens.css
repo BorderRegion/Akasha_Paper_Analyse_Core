@@ -1,0 +1,38 @@
+/* A quiet room: celadon, warm paper, ink and a little brass. */
+:root, [data-theme="light"] {
+  color-scheme: light;
+  --background: #f2f3ed; --surface: #fdfdf8; --surface-soft: #e7ede2;
+  --text: #29392f; --muted: #58665a; --accent: #486b50; --accent-text: #fffef7;
+  --border: #dce2d5; --control-border: #a4b39d;
+  --success: #46654a; --success-background: #e6efdf;
+  --warning: #80612e; --warning-background: #f4eedf;
+  --danger: #95534e; --danger-background: #f8eae5;
+  --info: #526d76; --info-background: #e7eef0;
+  --sidebar-bg: #253e32; --sidebar-text: #e0e8da; --sidebar-muted: #a9bcaa;
+  --hero-bg: #e3ead9; --hero-text: #304d36; --brass: #a08852;
+  --shadow-soft: 0 8px 32px #263c2b06;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #161e19; --surface: #202b23; --surface-soft: #2b382d;
+  --text: #e5eadc; --muted: #b0bda9; --accent: #b6cd9f; --accent-text: #1f3324;
+  --border: #374738; --control-border: #6e836b;
+  --success: #bdcfa7; --success-background: #303f2d;
+  --warning: #e2c18d; --warning-background: #413728;
+  --danger: #eab2a7; --danger-background: #44302c;
+  --info: #b0c9d0; --info-background: #293b40;
+  --sidebar-bg: #101a14; --sidebar-text: #e0e8da; --sidebar-muted: #a9bcaa;
+  --hero-bg: #2d3d2b; --hero-text: #d0dfbd; --brass: #c7b37f;
+  --shadow-soft: 0 8px 32px #00000015;
+}
+:root {
+  --motion-fast: 120ms; --motion-normal: 200ms;
+  --radius-card: 18px; --radius: 18px; --sidebar-width: 232px; --toolbar-height: 80px;
+  --content-max: 1600px; --reading-max: 800px;
+  --panel-padding: 24px;
+}
+[data-density="compact"] { --panel-padding: 16px; }
+[data-density="compact"] main article, [data-density="compact"] main th, [data-density="compact"] main td { padding-top: 8px; padding-bottom: 8px; }
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-fast: 0ms; --motion-normal: 0ms; }
+}

@@ -1,0 +1,6 @@
+.page { display: flex; flex-direction: column; gap: 24px; max-width: 960px; }
+.block { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 28px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); min-width: 0; }
+.block p { margin: 0; }
+.block label { display: flex; gap: 8px; align-items: center; }
+.health { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+@media (max-width: 480px) { .block { padding: 20px 16px; } }

@@ -1,0 +1,37 @@
+module_id: "agents.framework"
+version: "1.0.0"
+
+inputs:
+  - "AgentRequest"
+  - "LlmRequest"
+
+outputs:
+  - "AgentRunOutcome"
+  - "ModelCallRow"
+
+dependencies:
+  - "providers.base"
+  - "agents.prompts"
+  - "agents.tools"
+  - "agents.firewall"
+  - "database.core"
+
+healthcheck:
+  type: "internal"
+  name: "agent_registry_selfcheck"
+
+idempotent: false
+
+required_checks:
+  - "no_agent_bypasses_firewall"
+  - "every_model_call_audited"
+  - "unregistered_agent_rejected"
+  - "evidence_scope_enforced"
+  - "insufficient_evidence_is_valid_result"
+  - "repair_attempt_exactly_once"
+
+error_namespaces:
+  - "LLM"
+  - "CLAIM"
+  - "EVIDENCE"
+  - "CFG"

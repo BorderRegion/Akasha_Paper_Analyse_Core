@@ -1,0 +1,21 @@
+{
+  "status": "SUCCESS",
+  "claims": [
+    {
+      "claim_type": "FACT",
+      "category": "dataset_size",
+      "statement": "The dataset contains 1,000 samples.",
+      "evidence": [
+        {
+          "evidence_id": "ev_example",
+          "role": "SUPPORT"
+        }
+      ],
+      "uncertainties": []
+    }
+  ],
+  "observations": [],
+  "uncertainties": [],
+  "requests_for_more_evidence": [],
+  "warnings": []
+}

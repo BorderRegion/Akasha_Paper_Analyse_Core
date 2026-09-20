@@ -1,0 +1,30 @@
+module_id: "extraction.report"
+version: "1.0.0"
+
+inputs:
+  - "PageExtraction"
+  - "DocumentInspection"
+
+outputs:
+  - "ExtractionReport"
+  - "QualityChecks"
+
+dependencies:
+  - "extraction.page_classifier"
+
+healthcheck:
+  type: "internal"
+  name: "report_builder_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "zero_page_detection"
+  - "suspiciously_empty_text"
+  - "ocr_confidence_warnings_counted"
+  - "page_count_consistency"
+  - "location_sanity"
+  - "quality_state_mapping"
+
+error_namespaces:
+  - "EXTRACT"

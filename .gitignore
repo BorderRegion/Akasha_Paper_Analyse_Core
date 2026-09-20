@@ -1,0 +1,46 @@
+# Dependencies and caches
+.venv/
+node_modules/
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.tsbuildinfo
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+htmlcov/
+build/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+**/config/providers.yaml
+**/config/paperintel.yaml
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Personal data and generated diagnostics
+data/
+artifacts/
+deployment/
+test-results/
+playwright-report/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.zip
+celerybeat-schedule*
+*.pid
+
+# Editors
+.DS_Store
+.idea/
+.vscode/
+
+# The prebuilt web dist is intentionally tracked for local startup.

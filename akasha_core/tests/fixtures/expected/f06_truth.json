@@ -1,0 +1,33 @@
+{
+  "fixture": "F06",
+  "description": "Synthetic truth PDF golden expectations (spec doc 06 §2). Golden tests compare structured facts and evidence linkage, not writing style.",
+  "page_count": 1,
+  "facts": {
+    "dataset_size": "We evaluate on a dataset of exactly 1,000 samples.",
+    "accuracy": "Method A reaches 82.5% accuracy on the benchmark.",
+    "improvement": "This is an improvement of exactly 2.1 percentage points over the baseline.",
+    "hypothesis": "We hypothesize that method A outperforms method B on the benchmark.",
+    "limitation": "Limitation: the synthetic setting may not transfer to real corpora.",
+    "technique": "The experiment technique is gradient descent with momentum."
+  },
+  "expected_units": {
+    "TABLE": {
+      "count": 1,
+      "page": 1,
+      "cells_contain": ["Method", "Accuracy", "Baseline", "80.4%", "Method A", "82.5%"]
+    },
+    "REFERENCE": {
+      "count": 2,
+      "page": 1
+    },
+    "CAPTION": {
+      "count": 1,
+      "page": 1,
+      "text_starts_with": "Table 1"
+    },
+    "HEADING": {
+      "contains": ["Abstract", "1. Method", "2. Results", "3. Limitations", "References"]
+    }
+  },
+  "quality_state": "GOOD"
+}

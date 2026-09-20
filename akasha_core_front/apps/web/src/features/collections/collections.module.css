@@ -1,0 +1,13 @@
+.page { display: flex; flex-direction: column; gap: 24px; }
+.page > form { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; background: var(--hero-bg); border-radius: var(--radius); padding: 28px; }
+.page > form label { display: flex; flex-direction: column; gap: 8px; flex: 1 1 240px; }
+.header { display: flex; flex-direction: column; gap: 4px; }
+.actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.block { display: flex; flex-direction: column; gap: 14px; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); min-width: 0; overflow-wrap: anywhere; }
+.insights { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.insights li { display: flex; flex-direction: column; gap: 2px; padding: 10px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.insights p { margin: 0; }
+.insightTitle { font-weight: 600; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px; }
+.list li { display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline; padding: 28px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+.list li > a { font: 600 21px/1.6 var(--font-serif); width: 100%; text-decoration: none; }

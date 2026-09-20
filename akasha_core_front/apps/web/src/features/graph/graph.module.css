@@ -1,0 +1,8 @@
+.wrap { display: flex; flex-direction: column; gap: 8px; }
+.header { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.canvas { width: 100%; max-width: 32rem; height: auto; background: var(--surface-soft); border-radius: 12px; }
+.edge { stroke: var(--control-border); stroke-width: 1; }
+.node circle { fill: var(--accent); }
+.node text { font-size: 9px; fill: var(--text); }
+.list { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.list ul { margin: 2px 0 0; padding-left: 18px; color: var(--muted); font-size: var(--text-sm); }

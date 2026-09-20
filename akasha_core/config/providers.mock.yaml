@@ -1,0 +1,36 @@
+# Mock-only provider configuration (offline; no credentials, no network).
+# Used by gate checks, selftest --mock, and CLI smoke tests.
+
+spec_version: "1.0.0"
+
+providers:
+  mock_llm:
+    kind: mock_llm
+    options:
+      mode: "VALID"
+      seed: 1000
+
+  mock_llm_hostile:
+    kind: mock_llm
+    options:
+      mode: "INVENTED_NUMBER"
+      seed: 1000
+
+  mock_ocr:
+    kind: mock_ocr
+    options:
+      mode: "VALID"
+      seed: 2000
+
+  mock_embed:
+    kind: mock_embedding
+    options:
+      mode: "VALID"
+
+  mock_metadata:
+    kind: mock_metadata
+    options:
+      mode: "VALID"
+
+  object_store:
+    kind: local_object_store

@@ -1,0 +1,30 @@
+module_id: "ocr.fallback"
+version: "1.0.0"
+
+inputs:
+  - "PageRasterPng"
+  - "OCRProvider"
+
+outputs:
+  - "OcrPageResult"
+  - "ExtractedUnit"
+
+dependencies:
+  - "providers.resilience"
+  - "extraction.pdf"
+
+healthcheck:
+  type: "internal"
+  name: "ocr_fallback_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "ocr_units_carry_confidence_or_flag"
+  - "raster_bbox_scaled_to_pdf_points"
+  - "out_of_page_bbox_dropped_with_flag"
+  - "provider_failure_recorded_not_swallowed"
+
+error_namespaces:
+  - "OCR"
+  - "EXTRACT"

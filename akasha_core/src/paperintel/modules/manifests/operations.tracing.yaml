@@ -1,0 +1,25 @@
+module_id: "operations.tracing"
+version: "1.0.0"
+
+inputs:
+  - "TraceEvent"
+
+outputs:
+  - "TraceEventRow"
+
+dependencies:
+  - "database.core"
+
+healthcheck:
+  type: "internal"
+  name: "tracing_selfcheck"
+
+idempotent: false
+
+required_checks:
+  - "events_append_only"
+  - "chronological_read"
+  - "no_secret_material_in_events"
+
+error_namespaces:
+  - "DB"

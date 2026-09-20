@@ -1,0 +1,29 @@
+module_id: "extraction.page_classifier"
+version: "1.0.0"
+
+inputs:
+  - "PageInspection"
+
+outputs:
+  - "PageClassification"
+  - "TextQualityMetrics"
+
+dependencies:
+  - "extraction.pdf"
+
+healthcheck:
+  type: "internal"
+  name: "classifier_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "native_text_classification"
+  - "scanned_classification"
+  - "mixed_classification"
+  - "image_heavy_classification"
+  - "broken_text_layer_classification"
+  - "ocr_requested_only_when_needed"
+
+error_namespaces:
+  - "EXTRACT"

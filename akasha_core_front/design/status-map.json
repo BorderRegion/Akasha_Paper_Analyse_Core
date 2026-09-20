@@ -1,0 +1,134 @@
+{
+  "support": {
+    "UNVERIFIED": {
+      "label": "未核查",
+      "tone": "muted",
+      "icon": "circle"
+    },
+    "SUPPORTED": {
+      "label": "有证据支持",
+      "tone": "success",
+      "icon": "check"
+    },
+    "PARTIALLY_SUPPORTED": {
+      "label": "部分支持",
+      "tone": "warning",
+      "icon": "half-circle"
+    },
+    "DISPUTED": {
+      "label": "有争议",
+      "tone": "warning",
+      "icon": "triangle"
+    },
+    "UNSUPPORTED": {
+      "label": "缺少支持",
+      "tone": "danger",
+      "icon": "minus-circle"
+    },
+    "RETRACTED": {
+      "label": "已撤回",
+      "tone": "muted",
+      "icon": "strike"
+    },
+    "INSUFFICIENT_EVIDENCE": {
+      "label": "证据不足",
+      "tone": "muted",
+      "icon": "help"
+    }
+  },
+  "task": {
+    "PENDING": {
+      "label": "待处理",
+      "tone": "muted"
+    },
+    "QUEUED": {
+      "label": "排队中",
+      "tone": "info"
+    },
+    "RUNNING": {
+      "label": "进行中",
+      "tone": "info"
+    },
+    "WAITING": {
+      "label": "等待条件",
+      "tone": "muted"
+    },
+    "RETRYING": {
+      "label": "重试中",
+      "tone": "warning"
+    },
+    "SUCCEEDED": {
+      "label": "已完成",
+      "tone": "success"
+    },
+    "SUCCEEDED_WITH_WARNINGS": {
+      "label": "完成·有提示",
+      "tone": "warning"
+    },
+    "BLOCKED": {
+      "label": "已阻塞",
+      "tone": "warning"
+    },
+    "FAILED": {
+      "label": "失败",
+      "tone": "danger"
+    },
+    "CANCELLED": {
+      "label": "已取消",
+      "tone": "muted"
+    },
+    "SKIPPED": {
+      "label": "按策略跳过",
+      "tone": "muted"
+    }
+  },
+  "health": {
+    "HEALTHY": {
+      "label": "正常",
+      "tone": "success"
+    },
+    "DEGRADED": {
+      "label": "部分异常",
+      "tone": "warning"
+    },
+    "UNAVAILABLE": {
+      "label": "不可用",
+      "tone": "danger"
+    },
+    "MISCONFIGURED": {
+      "label": "配置有误",
+      "tone": "warning"
+    },
+    "FAILED": {
+      "label": "故障",
+      "tone": "danger"
+    },
+    "UNKNOWN": {
+      "label": "未测量",
+      "tone": "muted"
+    }
+  },
+  "claim_type": {
+    "FACT": "文中陈述",
+    "INFERENCE": "分析推断",
+    "CRITIQUE": "研究评价",
+    "EXTERNAL": "外部信息"
+  },
+  "tiers": {
+    "T0_INDEX": "索引",
+    "T1_SCAN": "速览",
+    "T2_FULL": "完整",
+    "T3_DEEP": "深审"
+  },
+  "personal": {
+    "UNREAD": "未读",
+    "READING": "在读",
+    "READ": "已读",
+    "LATER": "暂存"
+  },
+  "fallback": {
+    "label": "未知状态",
+    "tone": "muted",
+    "preserve_raw": true
+  }
+}

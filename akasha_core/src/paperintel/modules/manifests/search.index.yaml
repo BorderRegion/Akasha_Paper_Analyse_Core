@@ -1,0 +1,28 @@
+module_id: "search.index"
+version: "1.0.0"
+
+inputs:
+  - "PaperVersionId"
+
+outputs:
+  - "IndexReport"
+
+dependencies:
+  - "database.core"
+  - "providers.base"
+
+healthcheck:
+  type: "internal"
+  name: "search_index_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "projection_derived_not_canonical"
+  - "reindex_reuses_unchanged_documents"
+  - "embedding_count_mismatch_rejected"
+  - "fts_vector_populated_in_sql"
+
+error_namespaces:
+  - "PROVIDER"
+  - "CFG"

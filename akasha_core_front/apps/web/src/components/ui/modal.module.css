@@ -1,0 +1,5 @@
+.overlay { position: fixed; inset: 0; z-index: 100; background: #14261c9c; backdrop-filter: blur(3px); }
+.content { position: fixed; z-index: 101; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(860px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); overflow: auto; padding: 28px; display: flex; flex-direction: column; gap: 20px; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 20px 80px #14261c33; overflow-wrap: anywhere; }
+.header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.header h2 { margin: 0; }
+@media (max-width: 600px) { .content { padding: 20px 16px; width: calc(100vw - 24px); max-height: calc(100dvh - 24px); } }

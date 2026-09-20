@@ -1,0 +1,25 @@
+module_id: "operations.health"
+version: "1.0.0"
+
+inputs:
+  - "ModuleHealthRecord[]"
+
+outputs:
+  - "HealthSnapshot"
+  - "OverallState"
+
+dependencies: []
+
+healthcheck:
+  type: "internal"
+  name: "health_aggregator_health"
+
+idempotent: true
+
+required_checks:
+  - "aggregate_overall_state"
+  - "bounded_cache"
+  - "probe_failure_recorded"
+
+error_namespaces:
+  - "INTERNAL"

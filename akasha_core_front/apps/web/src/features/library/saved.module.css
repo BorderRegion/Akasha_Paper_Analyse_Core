@@ -1,0 +1,9 @@
+.wrap { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.create { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.create input { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--control-border); background: var(--surface); color: var(--text); }
+.create input { min-width: 0; max-width: 100%; }
+.tagChoices { display: flex; flex-wrap: wrap; gap: 10px; border: 0; padding: 0; margin: 0; }
+.tagChoices label { display: inline-flex; gap: 6px; align-items: center; padding: 6px 10px; border: 1px solid var(--border); border-radius: 10px; font-size: 12px; overflow-wrap: anywhere; }
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.list li { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.list button:first-child { font: inherit; background: none; border: none; color: var(--accent); cursor: pointer; text-decoration: underline; padding: 0; }

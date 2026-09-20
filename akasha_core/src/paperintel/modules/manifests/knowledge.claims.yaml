@@ -1,0 +1,30 @@
+module_id: "knowledge.claims"
+version: "1.0.0"
+
+inputs:
+  - "AgentRequest"
+  - "AgentRunOutcome"
+
+outputs:
+  - "ClaimRow"
+  - "ClaimEvidenceRow"
+  - "AnalysisRunRow"
+
+dependencies:
+  - "agents.framework"
+  - "database.core"
+
+healthcheck:
+  type: "internal"
+  name: "ledger_boundary_selfcheck"
+
+idempotent: false
+
+required_checks:
+  - "no_claim_without_evidence_references"
+  - "claims_start_unverified"
+  - "dedup_within_run"
+  - "runs_preserved_history"
+
+error_namespaces:
+  - "CLAIM"

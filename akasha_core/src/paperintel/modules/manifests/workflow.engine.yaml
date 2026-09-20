@@ -1,0 +1,39 @@
+module_id: "workflow.engine"
+version: "1.0.0"
+
+inputs:
+  - "PaperVersionId"
+  - "PipelineStage"
+  - "TaskInputManifest"
+
+outputs:
+  - "JobRow"
+  - "TaskRow"
+  - "JobPlan"
+
+dependencies:
+  - "database.core"
+  - "operations.tracing"
+  - "structure.reconstruct"
+  - "evidence.store"
+
+healthcheck:
+  type: "internal"
+  name: "workflow_engine_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "duplicate_dispatch_reuses_task"
+  - "idempotency_key_stable_dimensions"
+  - "invalid_transition_raises_internal_002"
+  - "bounded_retry_exhaustion_marks_failed"
+  - "cancelled_job_refuses_new_work"
+  - "resume_recovers_running_tasks"
+  - "replay_one_stage_only"
+  - "stage_progression_monotonic"
+
+error_namespaces:
+  - "QUEUE"
+  - "INTERNAL"
+  - "CFG"

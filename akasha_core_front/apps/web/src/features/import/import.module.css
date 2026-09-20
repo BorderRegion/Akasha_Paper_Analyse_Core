@@ -1,0 +1,14 @@
+.dialog { gap: 20px; }
+.dialog header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.dialog[data-dragging='true'] { outline: 2px dashed var(--accent); }
+.picker { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 28px 16px; border: 1px dashed var(--control-border); border-radius: 14px; background: var(--surface-soft); cursor: pointer; }
+.picker:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
+.picker > span:first-child { font-weight: 500; }
+.picker > span:last-of-type { font-size: 12px; }
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { text-align: left; padding: 8px; border-bottom: 1px solid var(--border); }
+.failed { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.workflow { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 0; margin: 0; gap: 8px; }
+.workflow li { display: flex; flex-direction: column; gap: 6px; background: var(--surface-soft); border-radius: 12px; padding: 14px 10px; font-size: 12px; }
+.workflow span { color: var(--accent); font-size: 20px; font-weight: 500; }
+@media (max-width: 600px) { .table { display: block; overflow-x: auto; } }

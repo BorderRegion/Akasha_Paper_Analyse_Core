@@ -1,0 +1,23 @@
+{
+  "bundle_version": "1.0.0",
+  "target_type": "job",
+  "target_id": "job_example",
+  "spec_version": "1.0.0",
+  "pipeline_version": "1.0.0",
+  "included": [
+    "job_manifest",
+    "task_states",
+    "module_health",
+    "trace_records",
+    "error_records",
+    "schema_versions",
+    "provider_status",
+    "prompt_versions"
+  ],
+  "redactions": [
+    "api_keys",
+    "authorization_headers",
+    "cookies",
+    ".env"
+  ]
+}

@@ -1,0 +1,27 @@
+module_id: "triage.service"
+version: "1.0.0"
+
+inputs:
+  - "PaperId"
+  - "ResourceTier"
+
+outputs:
+  - "TriageResultRow"
+
+dependencies:
+  - "database.core"
+
+healthcheck:
+  type: "internal"
+  name: "triage_policy_selfcheck"
+
+idempotent: false
+
+required_checks:
+  - "manual_override_always_wins"
+  - "pinned_papers_upgrade"
+  - "signals_recorded_never_invented"
+  - "decisions_audited"
+
+error_namespaces:
+  - "CFG"

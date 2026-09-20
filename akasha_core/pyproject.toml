@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paperintel"
+version = "1.0.0"
+description = "Akasha: local-first paper research workbench"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "pydantic>=2.6",
+    "pydantic-settings>=2.1",
+    "sqlalchemy>=2.0",
+    "alembic>=1.13",
+    "psycopg[binary]>=3.1",
+    "pgvector>=0.2.5",
+    "redis>=5.0",
+    "celery>=5.3",
+    "pymupdf>=1.24",
+    "httpx>=0.27",
+    "typer>=0.12",
+    "pyyaml>=6.0",
+    "prometheus-client>=0.20",
+    "python-ulid>=2.2",
+    "filelock>=3.16",
+    "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "hypothesis>=6.98",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+paperctl = "paperintel.cli.main:app_entry"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+paperintel = ["modules/manifests/*.yaml", "prompts/**/*.md", "prompts/**/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "unit: fast isolated tests",
+    "contract: schema/contract validation tests",
+    "integration: multi-module tests requiring services",
+    "e2e: end-to-end pipeline tests",
+    "golden: golden fixture regression tests",
+    "needs_db: requires a live PostgreSQL instance",
+    "needs_redis: requires a live Redis instance",
+]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.flake8-bugbear]
+# Typer's CLI pattern passes Option()/Argument() factory calls as defaults.
+extend-immutable-calls = ["typer.Option", "typer.Argument"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["B011"]
+# Package __init__ files re-export via dynamic __all__; imports are the API.
+"**/__init__.py" = ["F401"]

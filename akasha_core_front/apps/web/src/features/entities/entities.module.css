@@ -1,0 +1,6 @@
+.drawer { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.header { display: flex; justify-content: space-between; align-items: baseline; }
+.header button { font: inherit; background: none; border: none; font-size: var(--text-xl); cursor: pointer; color: var(--muted); }
+.body { display: flex; flex-direction: column; gap: 6px; }
+.body h3 { margin: 6px 0 0; font-size: var(--text-base); }
+.body ul { margin: 0; padding-left: 18px; font-size: var(--text-sm); }

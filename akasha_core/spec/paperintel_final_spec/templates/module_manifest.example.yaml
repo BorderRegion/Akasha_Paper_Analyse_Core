@@ -1,0 +1,31 @@
+module_id: "extraction.pdf"
+version: "1.0.0"
+
+inputs:
+  - "PaperAsset"
+
+outputs:
+  - "ExtractedPage[]"
+  - "ExtractionReport"
+
+dependencies:
+  - "storage.object_store"
+  - "database"
+  - "ocr.primary"
+
+healthcheck:
+  type: "internal"
+  name: "pdf_extraction_health"
+
+idempotent: true
+
+required_checks:
+  - "native_pdf_fixture"
+  - "scanned_pdf_fixture"
+  - "mixed_pdf_fixture"
+  - "synthetic_truth_fixture"
+
+error_namespaces:
+  - "PDF"
+  - "EXTRACT"
+  - "OCR"

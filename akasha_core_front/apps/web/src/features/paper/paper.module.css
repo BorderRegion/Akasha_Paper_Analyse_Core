@@ -1,0 +1,44 @@
+.page { display: flex; flex-direction: column; gap: 24px; }
+.header { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.header > div:first-child { flex: 1 1 520px; min-width: 0; }
+.header h1 { font-size: clamp(23px, 2vw, 30px); line-height: 1.5; overflow-wrap: anywhere; }
+.header p { font-size: 13px; margin: 8px 0; }
+.header details { font-size: 12px; overflow-wrap: anywhere; }
+.headerActions { display: flex; gap: 8px; align-items: flex-start; flex-wrap: wrap; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid var(--border); }
+.tabs button { font: inherit; padding: 8px 14px; border: none; background: none; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; }
+.tabs button[aria-selected='true'] { color: var(--text); border-bottom-color: var(--accent); }
+.body { display: flex; gap: 16px; align-items: flex-start; }
+.body[data-reader-open='true'] .analysis { flex: 1 1 0; }
+.analysis { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.module { display: flex; flex-direction: column; gap: 12px; }
+.claims { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.claim { display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); line-height: 1.85; }
+.claim[data-selected='true'] { border-color: var(--accent); background: var(--surface-soft); }
+:global([data-density='compact']) .claim { padding: 14px 16px; gap: 8px; }
+.claimHead { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: var(--text-sm); }
+.claimText { margin: 0; overflow-wrap: anywhere; }
+.evidenceButton { font: inherit; font-size: var(--text-sm); padding: 3px 8px; border-radius: 8px; border: 1px solid var(--control-border); background: var(--surface); color: var(--text); cursor: pointer; }
+.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; counter-reset: method; }
+.steps li { counter-increment: method; display: grid; grid-template-columns: 40px 1fr; align-items: start; gap: 16px; padding: var(--panel-padding, 24px); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); line-height: 1.85; overflow-wrap: anywhere; }
+.steps li::before { content: counter(method, decimal-leading-zero); display: grid; place-items: center; width: 40px; height: 40px; background: var(--surface-soft); color: var(--accent); border-radius: 12px; font-size: 15px; font-variant-numeric: tabular-nums; }
+.results { width: 100%; border-collapse: collapse; }
+.results th, .results td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--border); }
+.footnotes { margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: var(--text-sm); }
+.notes { display: flex; flex-direction: column; gap: 8px; }
+.noteHeader { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.editor { box-sizing: border-box; width: 100%; min-height: 12rem; font: inherit; padding: 10px; border-radius: 12px; border: 1px solid var(--control-border); background: var(--surface); color: var(--text); }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.compare pre { white-space: pre-wrap; background: var(--surface-soft); padding: 8px; border-radius: 8px; }
+
+/* Narrow screens: a wide table scrolls inside its own box rather than pushing the
+   whole page sideways (docs/08 可访问性). */
+@media (max-width: 900px) {
+  .claim { padding: 18px 16px; }
+  .compare { grid-template-columns: 1fr; }
+  .body { flex-direction: column; }
+  .analysis { width: 100%; }
+  .body[data-reader-open='true'] .analysis { flex: none; }
+  .tabs { flex-wrap: wrap; }
+  .table, .matrix, .results { display: block; overflow-x: auto; white-space: normal; }
+}

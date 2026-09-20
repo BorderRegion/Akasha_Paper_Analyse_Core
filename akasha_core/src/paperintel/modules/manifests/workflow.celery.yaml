@@ -1,0 +1,30 @@
+module_id: "workflow.celery"
+version: "1.0.0"
+
+inputs:
+  - "TaskId"
+  - "DatabaseUrl"
+
+outputs:
+  - "TaskOutcome"
+
+dependencies:
+  - "workflow.engine"
+  - "workflow.handlers"
+  - "config.settings"
+
+healthcheck:
+  type: "command"
+  name: "celery_broker_connectivity"
+
+idempotent: true
+
+required_checks:
+  - "single_claim_per_task"
+  - "eager_mode_explicit"
+  - "broker_failure_raises_queue_001"
+  - "failures_recorded_never_swallowed"
+
+error_namespaces:
+  - "QUEUE"
+  - "INTERNAL"

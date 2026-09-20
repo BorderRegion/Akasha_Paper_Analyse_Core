@@ -1,0 +1,35 @@
+module_id: "providers.openai_compatible"
+version: "1.0.0"
+
+inputs:
+  - "LlmRequest"
+  - "EmbeddingBatch"
+
+outputs:
+  - "LlmResponse"
+  - "EmbeddingResult"
+  - "LlmProviderStatus"
+
+dependencies:
+  - "config.provider_config"
+  - "providers.resilience"
+
+healthcheck:
+  type: "internal"
+  name: "llm_provider_health"
+
+idempotent: true
+
+required_checks:
+  - "timeout_maps_llm001"
+  - "rate_limit_maps_llm002_with_retry_after"
+  - "server_error_retry_then_success"
+  - "malformed_json_maps_llm003_or_provider001"
+  - "api_key_never_serialized"
+  - "canary_echo_verification"
+
+error_namespaces:
+  - "LLM"
+  - "PROVIDER"
+  - "EMBED"
+  - "CFG"

@@ -1,0 +1,15 @@
+.page { min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding: 24px; gap: 24px; }
+.scene { background: var(--sidebar-bg); color: var(--sidebar-text); border-radius: 22px; padding: 40px 48px; min-height: 700px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.wordmark { font: 24px var(--font-serif); letter-spacing: .17em; z-index: 1; }.wordmark span { margin-left: 14px; font: 12px var(--font-sans); letter-spacing: .22em; color: var(--sidebar-muted); }
+.botanical { position: absolute; width: 320px; height: 370px; top: 14%; right: 6%; color: #ccdfa7; }
+.sceneText { margin-top: auto; padding-top: 320px; z-index: 1; }.sceneText h2 { font: 34px/1.65 var(--font-serif); font-weight: 400; margin: 20px 0; }.sceneText p { color: var(--sidebar-muted); font-size: 14px; line-height: 2; }
+.small { font-size: 12px; letter-spacing: .22em; color: var(--sidebar-muted); }.edition { margin-top: 48px; font-size: 12px; color: var(--sidebar-muted); letter-spacing: .1em; }
+.panel { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 36px; position: relative; }
+.formWrap { width: 100%; max-width: 370px; }.formWrap h1 { font-size: 34px; margin: 18px 0; }.intro { color: var(--muted); margin-bottom: 40px; font-size: 14px; }
+.formWrap form { display: flex; flex-direction: column; gap: 14px; }.formWrap label { font-size: 13px; }.labelHint { color: var(--muted); font-size: 12px; margin-left: 8px; }
+.inputRow { position: relative; }.inputRow input { width: 100%; min-height: 50px; padding-right: 60px !important; }.reveal { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); border: 0; background: none; color: var(--muted); font-size: 12px; padding: 8px 0; }
+.formWrap form > button { min-height: 48px; margin-top: 8px; }.formWrap [role='alert'] { font-size: 13px; line-height: 1.8; }.errorCode { display: block; color: var(--muted); font-size: 12px; }
+.help { color: var(--muted); font-size: 12px; line-height: 1.9; margin-top: 24px; }.privacy { position: absolute; bottom: 18px; color: var(--muted); font-size: 12px; letter-spacing: .15em; }
+.waiting { min-height: 100vh; display: grid; place-items: center; color: var(--muted); font-family: var(--font-serif); }
+@media (max-width: 850px) { .scene { padding: 32px; }.sceneText h2 { font-size: 27px; }.panel { padding-inline: 16px; } }
+@media (max-width: 650px) { .page { grid-template-columns: minmax(0, 1fr); padding: 12px; gap: 8px; }.scene { min-height: 220px; padding: 24px; }.sceneText { padding-top: 30px; }.sceneText h2 { font-size: 23px; margin: 0; }.sceneText p, .small, .edition { display: none; }.botanical { width: 170px; height: 220px; top: 22px; right: 0; opacity: .65; }.panel { padding: 40px 20px 65px; }.formWrap h1 { font-size: 29px; }.intro { margin-bottom: 28px; }.privacy { bottom: 0; } }

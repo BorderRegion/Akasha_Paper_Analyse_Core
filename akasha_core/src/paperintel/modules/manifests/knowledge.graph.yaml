@@ -1,0 +1,30 @@
+module_id: "knowledge.graph"
+version: "1.0.0"
+
+inputs:
+  - "ClaimRow"
+  - "EntityType"
+
+outputs:
+  - "EntityRow"
+  - "RelationRow"
+
+dependencies:
+  - "database.core"
+  - "knowledge.claims"
+
+healthcheck:
+  type: "internal"
+  name: "graph_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "entity_normalization_deterministic"
+  - "alias_resolution_no_fragmentation"
+  - "relations_idempotent_and_evidence_linked"
+  - "self_relations_rejected"
+  - "graph_expansion_bounded_and_cycle_safe"
+
+error_namespaces:
+  - "CFG"

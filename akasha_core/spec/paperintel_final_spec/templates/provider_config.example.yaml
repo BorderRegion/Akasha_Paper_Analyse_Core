@@ -1,0 +1,27 @@
+spec_version: "1.0.0"
+
+providers:
+  llm_primary:
+    kind: openai_compatible
+    base_url: "${LLM_BASE_URL}"
+    api_key_env: "LLM_API_KEY"
+    timeout_seconds: 120
+    max_concurrency: 32
+
+    models:
+      analyst:
+        model: "${LLM_ANALYST_MODEL}"
+        max_concurrency: 24
+      verifier:
+        model: "${LLM_VERIFIER_MODEL}"
+        max_concurrency: 8
+      synthesizer:
+        model: "${LLM_SYNTH_MODEL}"
+        max_concurrency: 8
+
+  ocr_primary:
+    kind: paddle_http
+    base_url: "${PADDLE_OCR_BASE_URL}"
+    api_key_env: "PADDLE_OCR_API_KEY"
+    timeout_seconds: 120
+    max_concurrency: 8

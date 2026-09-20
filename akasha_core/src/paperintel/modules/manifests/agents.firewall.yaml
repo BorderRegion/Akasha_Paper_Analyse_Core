@@ -1,0 +1,38 @@
+module_id: "agents.firewall"
+version: "1.0.0"
+
+inputs:
+  - "AgentResult"
+
+outputs:
+  - "FirewallOutcome"
+
+dependencies:
+  - "schemas.agent"
+  - "schemas.claims"
+  - "agents.tools"
+
+healthcheck:
+  type: "internal"
+  name: "firewall_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "non_json_rejected_llm_003"
+  - "schema_violation_rejected_llm_004"
+  - "semantic_violation_rejected_llm_005"
+  - "unknown_evidence_rejected_evidence_001"
+  - "wrong_paper_evidence_rejected_evidence_002"
+  - "fact_without_evidence_rejected_claim_001"
+  - "unsupported_number_dropped"
+  - "duplicate_claims_rejected"
+  - "spam_rejected"
+  - "overlong_field_rejected"
+  - "model_refusal_rejected"
+  - "constrained_repair_exactly_once"
+
+error_namespaces:
+  - "LLM"
+  - "CLAIM"
+  - "EVIDENCE"

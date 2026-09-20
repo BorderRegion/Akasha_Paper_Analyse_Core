@@ -1,0 +1,27 @@
+module_id: "operations.disk"
+version: "1.0.0"
+
+inputs:
+  - "DataDir"
+
+outputs:
+  - "DiskStatus"
+  - "DiskReport"
+
+dependencies:
+  - "config.settings"
+
+healthcheck:
+  type: "command"
+  name: "disk_status_check"
+
+idempotent: true
+
+required_checks:
+  - "thresholds_percent_and_bytes"
+  - "critical_blocks_expansion_resource_001"
+  - "status_operations_never_blocked"
+  - "breakdown_by_retention_class"
+
+error_namespaces:
+  - "RESOURCE"

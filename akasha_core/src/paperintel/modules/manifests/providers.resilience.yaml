@@ -1,0 +1,30 @@
+module_id: "providers.resilience"
+version: "1.0.0"
+
+inputs:
+  - "ProviderOperation"
+  - "RetryPolicy"
+
+outputs:
+  - "ProviderResult"
+  - "FailureClassification"
+
+dependencies: []
+
+healthcheck:
+  type: "internal"
+  name: "resilience_selftest"
+
+idempotent: true
+
+required_checks:
+  - "bounded_retry_no_infinite_loop"
+  - "circuit_breaker_open_rejects_fast"
+  - "circuit_breaker_half_open_recovery"
+  - "concurrency_ceiling_enforced"
+  - "retry_after_429_honored_capped"
+
+error_namespaces:
+  - "PROVIDER"
+  - "LLM"
+  - "OCR"

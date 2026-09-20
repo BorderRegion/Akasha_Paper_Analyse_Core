@@ -1,0 +1,30 @@
+module_id: "search.retrieval"
+version: "1.0.0"
+
+inputs:
+  - "SearchFilters"
+  - "Query"
+
+outputs:
+  - "SearchResponse"
+
+dependencies:
+  - "search.index"
+  - "providers.base"
+  - "knowledge.graph"
+
+healthcheck:
+  type: "internal"
+  name: "retrieval_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "structured_filters_exact"
+  - "empty_filter_matches_nothing"
+  - "semantic_channel_cannot_bypass_scope"
+  - "ranking_deterministic"
+  - "channels_reported_per_hit"
+
+error_namespaces:
+  - "CFG"

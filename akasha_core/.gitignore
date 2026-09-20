@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+secrets.*
+
+# Runtime data (canonical objects live under data/, disposable in dev)
+data/objects/
+data/temp/
+data/tmp/
+data/cache/
+data/*.db
+data/*.sqlite3
+
+# Artifacts produced by gates/tests (kept selectively via git add -f when needed)
+artifacts/checkpoints/*/tmp/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

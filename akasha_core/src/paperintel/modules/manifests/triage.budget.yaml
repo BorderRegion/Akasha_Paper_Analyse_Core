@@ -1,0 +1,28 @@
+module_id: "triage.budget"
+version: "1.0.0"
+
+inputs:
+  - "ResourceTier"
+  - "PipelineStage"
+
+outputs:
+  - "AnalysisBudget"
+
+dependencies:
+  - "triage.service"
+
+healthcheck:
+  type: "internal"
+  name: "budget_policy_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "stage_ladder_monotonic"
+  - "t0_excludes_deep_work"
+  - "t3_allows_complete_ladder"
+  - "agent_budget_per_tier"
+  - "skip_reasons_explainable"
+
+error_namespaces:
+  - "CFG"

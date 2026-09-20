@@ -1,0 +1,46 @@
+/* Motion tokens and the single place animations are declared (spec docs/04). */
+:root {
+  --motion-fast: 100ms;
+  --motion-normal: 160ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Reduced motion: durations collapse to zero and no transition/animation runs. */
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-fast: 0ms; --motion-normal: 0ms; }
+}
+
+/* Explicit user preference (settings: reduce_motion) — same effect as the OS
+   setting, applied on the root element so components need no JS branch. */
+[data-reduce-motion='true'] {
+  --motion-fast: 0ms;
+  --motion-normal: 0ms;
+}
+
+[data-reduce-motion='true'] *,
+[data-reduce-motion='true'] *::before,
+[data-reduce-motion='true'] *::after {
+  animation-duration: 1ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 1ms !important;
+}
+
+/* The ONLY permitted animation is the static skeleton shimmer, and it is
+   disabled whenever motion is reduced (docs/05: skeleton must not be an
+   infinite animation that hides a permanent error). */
+@keyframes skeleton-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.72; }
+  100% { opacity: 1; }
+}
+
+.skeleton {
+  animation: skeleton-pulse var(--motion-normal) var(--ease-standard) infinite;
+  background: var(--surface-soft);
+  border-radius: var(--radius-card);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+}
+[data-reduce-motion='true'] .skeleton { animation: none !important; }

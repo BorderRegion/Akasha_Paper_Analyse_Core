@@ -1,0 +1,29 @@
+module_id: "database.core"
+version: "1.0.0"
+
+inputs:
+  - "SQLAlchemyModels"
+  - "AlembicMigrations"
+
+outputs:
+  - "CanonicalTables"
+  - "Session"
+
+dependencies:
+  - "config.settings"
+
+healthcheck:
+  type: "internal"
+  name: "database_health"
+
+idempotent: true
+
+required_checks:
+  - "migration_up_down_disposable_db"
+  - "entity_crud"
+  - "evidence_immutability_enforcement"
+  - "alembic_revision_matches_head"
+  - "pgvector_extension_present"
+
+error_namespaces:
+  - "DB"

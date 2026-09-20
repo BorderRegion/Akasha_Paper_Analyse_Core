@@ -1,0 +1,29 @@
+module_id: "knowledge.collections"
+version: "1.0.0"
+
+inputs:
+  - "CollectionId"
+  - "PaperId"
+
+outputs:
+  - "CollectionRow"
+  - "CollectionPaperRow"
+
+dependencies:
+  - "database.core"
+  - "knowledge.tags"
+
+healthcheck:
+  type: "internal"
+  name: "collections_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "membership_idempotent"
+  - "scope_resolution_stable"
+  - "preferred_tags_validated"
+  - "manual_override_recorded"
+
+error_namespaces:
+  - "CFG"

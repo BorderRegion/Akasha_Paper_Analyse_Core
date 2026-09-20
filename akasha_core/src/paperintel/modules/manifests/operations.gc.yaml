@@ -1,0 +1,31 @@
+module_id: "operations.gc"
+version: "1.0.0"
+
+inputs:
+  - "DataDir"
+  - "DryRun"
+
+outputs:
+  - "GcReport"
+
+dependencies:
+  - "operations.disk"
+  - "storage.object_store"
+  - "database.core"
+
+healthcheck:
+  type: "command"
+  name: "gc_dry_run_check"
+
+idempotent: false
+
+required_checks:
+  - "dry_run_default_no_deletion"
+  - "canonical_objects_never_collected"
+  - "candidates_report_doc07_fields"
+  - "content_dedup_report"
+  - "errors_collected_per_object"
+
+error_namespaces:
+  - "STORAGE"
+  - "RESOURCE"

@@ -1,0 +1,32 @@
+module_id: "evidence.retrieval"
+version: "1.0.0"
+
+inputs:
+  - "EvidenceId"
+  - "PaperVersionId"
+  - "EvidenceQuery"
+
+outputs:
+  - "Evidence"
+  - "SectionNode"
+  - "VersionSummary"
+
+dependencies:
+  - "database.core"
+  - "evidence.store"
+
+healthcheck:
+  type: "internal"
+  name: "evidence_retrieval_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "unknown_id_raises_evidence_001"
+  - "scope_mismatch_raises_evidence_002"
+  - "contract_materialization_valid"
+  - "filters_pages_sections_types_quality"
+  - "superseded_excludable_from_listings"
+
+error_namespaces:
+  - "EVIDENCE"

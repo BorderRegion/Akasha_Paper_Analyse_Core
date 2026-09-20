@@ -1,0 +1,32 @@
+module_id: "storage.object_store"
+version: "1.0.0"
+
+inputs:
+  - "bytes"
+  - "FilePath"
+  - "AssetKind"
+
+outputs:
+  - "StorageKey"
+  - "Sha256Hex"
+
+dependencies:
+  - "config.settings"
+
+healthcheck:
+  type: "internal"
+  name: "object_store_health"
+
+idempotent: true
+
+required_checks:
+  - "content_addressed_key_layout"
+  - "dedup_same_content"
+  - "atomic_write_no_corrupt_canonical_object"
+  - "hash_mismatch_detection"
+  - "low_disk_protection"
+  - "temp_sweep_never_touches_canonical"
+
+error_namespaces:
+  - "STORAGE"
+  - "RESOURCE"

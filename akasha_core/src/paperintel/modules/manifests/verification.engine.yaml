@@ -1,0 +1,33 @@
+module_id: "verification.engine"
+version: "1.0.0"
+
+inputs:
+  - "ClaimRow"
+  - "ResourceTier"
+
+outputs:
+  - "VerificationRow"
+  - "VerificationReport"
+
+dependencies:
+  - "knowledge.claims"
+  - "evidence.retrieval"
+  - "triage.service"
+
+healthcheck:
+  type: "internal"
+  name: "verification_engine_selfcheck"
+
+idempotent: false
+
+required_checks:
+  - "tier_applicable_verifier_sets"
+  - "t3_runs_complete_set"
+  - "verification_rows_append_only"
+  - "support_transition_single_chokepoint"
+  - "retracted_never_automatic"
+  - "verification_pass_audited"
+
+error_namespaces:
+  - "CFG"
+  - "VERIFY"

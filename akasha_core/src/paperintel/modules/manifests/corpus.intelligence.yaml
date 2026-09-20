@@ -1,0 +1,35 @@
+module_id: "corpus.intelligence"
+version: "1.0.0"
+
+inputs:
+  - "CollectionId"
+  - "PaperIds"
+
+outputs:
+  - "CorpusView"
+  - "CorpusFinding"
+
+dependencies:
+  - "knowledge.claims"
+  - "knowledge.graph"
+  - "knowledge.tags"
+  - "knowledge.collections"
+  - "verification.engine"
+
+healthcheck:
+  type: "internal"
+  name: "corpus_views_selfcheck"
+
+idempotent: true
+
+required_checks:
+  - "all_doc01_section19_functions_implemented"
+  - "every_finding_carries_provenance"
+  - "every_view_is_audited"
+  - "empty_scope_never_widens"
+  - "generic_phrasing_never_contradicts"
+  - "attributable_findings_materialize_as_claims"
+
+error_namespaces:
+  - "CLAIM"
+  - "CFG"

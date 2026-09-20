@@ -1,0 +1,40 @@
+# PaperIntel application configuration example.
+# Copy to paperintel.yaml and point PAPERINTEL_CONFIG at it.
+# Unknown keys are rejected (CFG_002); environment variables override values.
+
+core:
+  env: dev
+  data_dir: ./data
+  log_level: INFO
+  log_json: true
+
+database:
+  url: postgresql+psycopg://paperintel:paperintel@127.0.0.1:5432/paperintel
+  pool_size: 10
+  max_overflow: 20
+  echo: false
+
+redis:
+  url: redis://127.0.0.1:6379/0
+
+celery:
+  broker_url: redis://127.0.0.1:6379/1
+  result_backend: redis://127.0.0.1:6379/2
+  task_acks_late: true
+  worker_prefetch_multiplier: 1
+
+api:
+  host: 127.0.0.1
+  port: 8420
+  # token: set API_TOKEN in the environment; never commit tokens
+  token: null
+
+disk:
+  warning_free_percent: 15
+  critical_free_percent: 5
+  warning_free_bytes: null
+  critical_free_bytes: null
+  debug_ttl_days: 14
+  temp_max_age_hours: 24
+
+providers_file: ./config/providers.yaml
