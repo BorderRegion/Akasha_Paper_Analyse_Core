@@ -16,7 +16,7 @@ fi
 export PAPERINTEL_WEB_DIST="${PAPERINTEL_WEB_DIST:-$release_root/akasha_core_front/apps/web/dist}"
 export PAPERINTEL_PROVIDERS_FILE="${PAPERINTEL_PROVIDERS_FILE:-./config/providers.yaml}"
 if [[ ! -f "$PAPERINTEL_PROVIDERS_FILE" ]]; then
-  echo '缺少 provider 配置，请参照 README_ZH.md 创建。' >&2
+  echo '缺少 provider 配置，请参照 akasha_core/README.md 创建。' >&2
   exit 1
 fi
 case "${1:-api}" in
